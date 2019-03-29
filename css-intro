@@ -28,11 +28,11 @@
   <br><br>
   <p>As an example: 
   <br><br>
-  <img href="./images/css1">
+  <img href="./images/css1.PNG">
   <br><br>
   ...would be represented as:
   <br><br>
-  <img href="/images/css2">
+  <img href="/images/css2.PNG">
   <br><br>
   ...where the &ltp&gt element is the parent DOM node of the text and &ltspan&gt elements. The &ltspan&gt elements are DOM note siblings
   along with the text, and the &ltspan&gt elements are also parent DOM nodes of other text that are siblings.  

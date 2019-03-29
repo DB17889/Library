@@ -1,0 +1,20 @@
+.code {
+    border:solid darkblue 1px;
+    background-color: lightsalmon;
+}
+
+.header {
+    width: 100%;
+    background-color: lightgray;
+    height: 30px;
+    position: relative;
+}
+
+h1 {
+    text-align: center;
+    text-decoration: underline;
+}
+
+h2 {
+    text-decoration: underline;
+}

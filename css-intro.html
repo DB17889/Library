@@ -4,13 +4,15 @@
 <title>CSS Intro</title>
 
   <head>
-
+    <link href="./style.css" rel="stylesheet">
   </head>
 
   <body>
-    <a href="./css-index.html">BACK</a>
-    <a href="https://developer.mozilla.org/en-US/docs/Learn/CSS/Introduction_to_CSS">SOURCE</a>
-  
+    <div class="header">
+      <a href="./css-index.html">BACK</a>
+      <a href="https://developer.mozilla.org/en-US/docs/Learn/CSS/Introduction_to_CSS">SOURCE</a>
+    </div>
+
   <h1>How CSS Works</h1>
     <h2>What is CSS?</h2>
       <p>CSS is a language for specifying how a page page is presented.
@@ -26,11 +28,11 @@
 
     <h2>How does CSS work?</h2>
       <p>When the browser displays a document, it first combines all content from both the HTML and CSS documents into a 
-      <eph>Document Object Model</eph> or 'DOM'. The browser then displays the contents of the DOM. 
+      <i>Document Object Model</i> or 'DOM'. The browser then displays the contents of the DOM. 
       <a href="https://mdn.mozillademos.org/files/11781/rendering.svg">(Visual Example)</a>
       <br>
       <p>A DOM has a tree structure, where each element, attribute and text becomes a 
-      <a href="https://developer.mozilla.org/en-US/docs/Glossary/Node/DOM"><emp>DOM Node. </emp></a>
+      <a href="https://developer.mozilla.org/en-US/docs/Glossary/Node/DOM"><i>DOM Node. </i></a>
       DOM Nodes have a parent/child relationship. Some elements are parents of 'child nodes', child nodes can hace 'sibling nodes'.</p>
       <p>As an example: 
       <br>
@@ -40,20 +42,114 @@
       <br>
       <img src="./images/css2.PNG">
       <br>
-      ...where the &ltp&gt element is the parent DOM node of the text and &ltspan&gt elements. The &ltspan&gt elements are DOM note siblings
-      along with the text, and the &ltspan&gt elements are also parent DOM nodes of other text that are siblings.  
+      ...where the <span class="code">&ltp&gt</span> element is the parent DOM node of the text and 
+      <span class="code">&ltspan&gt</span> elements. The <span class="code">&ltspan&gt</span> elements are DOM note siblings along with the text, and the 
+      <span class="code">&ltspan&gt</span> elements are also parent DOM nodes
+       of other text that are siblings.  
  
     <h2>Applying CSS to HTML</h2>
-      <p>An external stylesheet is usually a text file with a .css extension, referenced in a HTML file using the &ltlink&gt element 
-      in the HTML header. Usually something like: &ltlink rel="stylesheet" href="style.css"&gt.</p>
+      <p>An external stylesheet is usually a text file with a .css extension, 
+      referenced in a HTML file using the <span class="code">&ltlink&gt</span> element 
+      in the HTML header. Usually something like: 
+      <span class="code">&ltlink rel="stylesheet" href="style.css"&gt.</span></p>
       <p>It is also possible for an internal stylesheet within the HTML file. Try to avoid this, but if required the CSS elements and properties 
       would be contained within the &ltstyle&gt element contained within the html header. </p>
       <p>Again, try to avoid, but it is also possible for inline styles that are contained within a "style" attribute within the element. 
-      This affects the one element only, and looks like: &lth1 style="color:blue;border:solid black;"&gt .</p>
+      This affects the one element only, and looks like: 
+      <span class="code">&lth1 style="color:blue; border:solid black;"&gt.</span></p>
       
   <h1>CSS Syntax</h1>
     <h2>Vocabulary</h2>
+      <p>CSS consists of two key elements:
+        <ul>
+          <li><strong>Properties:</strong> Indentifiers which indicate the feature which
+          is being styled.</li>
+          <li><strong>Values:</strong> Each propery is given a value which indicates the 
+          style of the property.</li>
+        </ul> 
+        A propery and value combined is called a <i>CSS Declaration</i>, which is 
+        contained within <i>CSS Declaration Blocks.</i>
+        <br><br>
+        A CSS declaration syntax is the propery, followed by a colon, followed by
+        the value(s) of that propery, followed by semi-colon. For example:
+        <span class="code">background-color:red;</span>.
+        <br><br>
+        Each CSS declaration is contained within a declaration block. Multiple declarations
+        can be contrained within a block. A block is contained within 
+        <span class="code">{ }</span>.
+        <br><br>
+        A CSS block is then assigned to a selector, or group of selectors. A standalone
+        selector refers to an element, e.g. <span class="code">p</span> for paragraph. 
+        A selector with a fullstop refers to a class, e.g. <span class="code">.code</span>.
+        A selector with an octothorpe refers to an ID, e.g. <span class="code">#section5a</span>.
+        <br><br>
+        A few other CSS statements to be aware of are:
+          <ul>
+              <li><b>At Rules:</b>Used to convey metadata. For example, 
+              <span class="code">@import: 'custom.css'</span>.</li>
+              <li><b>Nested Statements:</b>A subset of an at-rule. For example,
+              <span class="code">@media (min-width: 800px) { }</span>.</li> In this case, 
+              the statement only applies when the nested rule is met.
+          </ul>
+        </p><p>
+          Comments can be added to CSS using <span class="code">/*</span> to start
+          and <span class="code">*/</span> to end.
+         </p><p>
+           Some properties can be shorthand. For example, <span class="code">padding:
+             10px 15px 15px 5px</span> is the same as: <br>
+             <span class="code">padding-top: 10px</span><br>
+             <span class="code">padding-right: 15px</span><br>
+             <span class="code">padding-bottom: 15px</span><br>
+             <span class="code">padding-left: 5px</span><br>
+            ...where the process is top, right, bottom, left. Remember: North, East, 
+            South, West.
+         </p>
+  <h1>CSS Selectors</h1>
+      <p>There are 6 key types of selector:</p>
+      <ul>
+        <li>Simple Selectors</li>
+        <li>Attribute Selectors</li>
+        <li>Pseudo-Classes</li>
+        <li>Pseudo-Elements</li>
+        <li>Combinators</li>
+        <li>Multiple Selectors</li>
+      </ul>
 
-  
+    <h2>Simple Selectors</h2>
+    <p>The simple selectors include:
+      <ul><b>Element selector:</b> Applies to an element such as
+      <span class="code">p</span> for the paragraph element.</ul>
+      <ul><b>Class selector:</b> Applies to all elements where a html 
+      <span class="code">class</span> attribute is in use.</ul>
+      <ul><b>ID selector:</b> Applies to a single element that has a unique
+      <span class="code">ID</span> attribute assigned.</ul>
+      <ul><b>Universal selector:</b> Applies to everything. Not used often.</ul>
+    </p>
+    <h2>Presence and Value Attribute Selectors</h2>
+    <p>Attribute selectors match elements based on specific attributes and 
+      the attribute values. The selector is housed within square brackets
+      <span class="code">[ ]</span>, which contains the attribute name and optional
+      condition to match. For example:
+      <ul>
+        <li><span class="code">[attr]</span> is a selector acting on all elements with
+        the <span class="code">attr</span> attribute.</li>
+        <li><span class="code">[attr=val]</span> is a selector acting on all elements with
+        the <span class="code">attr</span> attribute where the attribute value is 
+        equal to val.</li>
+        <li><span class="code">[attr~=val]</span> is a selector like the one above,
+        but acting on one of a space-separated list of words contained in 
+        <span class="code">[attr]</span>'s value.</li>
+        <li><span class="code">[attr^=val]</span> is a sector which will select all
+        elements with attribute <span class="code">attr</span> that starts with val.</li>
+        <li><span class="code">[attr$=val]</span>is a sector which will select all
+         elements with attribute <span class="code">attr</span> that ends with val.</li>
+        <li><span class="code">[attr*=val]</span>is a sector which will select all
+        elements with attribute <span class="code">attr</span> that contains 
+        substring val.</li>
+      </ul>
+    </p>
+    <h2>Pseudo-Classes</h2>
+    
+
   </body>
 </html>

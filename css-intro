@@ -3,7 +3,8 @@
 <header>CSS Intro</header>
   <body>
   <a href="https://developer.mozilla.org/en-US/docs/Learn/CSS/Introduction_to_CSS">Source</a>
-  <h1>How Css Works</h1>
+  <a href="./css-index">BACK</a>
+  <h1>How CSS Works</h1>
   <h2>What is CSS?</h2>
   <p>CSS is a language for specifying how a page page is presented.
   <br><br>
@@ -36,5 +37,21 @@
   <br><br>
   ...where the &ltp&gt element is the parent DOM node of the text and &ltspan&gt elements. The &ltspan&gt elements are DOM note siblings
   along with the text, and the &ltspan&gt elements are also parent DOM nodes of other text that are siblings.  
+  <h2>Applying CSS to HTML</h2>
+  <p>An external stylesheet is usually a text file with a .css extension, referenced in a HTML file using the &ltlink&gt element 
+  in the HTML header.
+  <br>
+  Usually something like: &ltlink rel="stylesheet" href="style.css"&gt.</p>
+  <br><br>
+  <p>It is also possible for an internal stylesheet within the HTML file. Try to avoid this, but if required the CSS elements and properties 
+  would be contained within the &ltstyle&gt element contained within the html header. </p>
+  <br><br>
+  <p>Again, try to avoid, but it is also possible for inline styles that are contained within a "style" attribute within the element. 
+  This affects the one element only, and looks like: &lt h1 styel="color:blue;border:solid black;" &gt .</p>
+  
+<h1>CSS Syntax</h1>
+<h2>Vocabulary</h2>
+
+  
   </body>
 </html>

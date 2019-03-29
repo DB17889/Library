@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html> 
+
+<title>CSS Intro</title>
+
+  <head>
+
+  </head>
+
+  <body>
+    <a href="./css-index.html">BACK</a>
+    <a href="https://developer.mozilla.org/en-US/docs/Learn/CSS/Introduction_to_CSS">SOURCE</a>
+  
+  <h1>How CSS Works</h1>
+    <h2>What is CSS?</h2>
+      <p>CSS is a language for specifying how a page page is presented.
+      <br><br>
+      A CSS document is usually a text file consisting of:
+      <br>
+      <ul>
+          <li><strong>Properties:</strong> Attributes that have values that define how something looks, e.g. this font should be blue and size 12
+          or this element should be 50% the width of the parent and aligned to the right.</li>
+          <li><strong>Selector:</strong> The selection of which elemnts the properties above should be assigned to. e.g. this should apply to 
+          all headers, or just certain paragraphs in my document.
+       </ul>
+
+    <h2>How does CSS work?</h2>
+      <p>When the browser displays a document, it first combines all content from both the HTML and CSS documents into a 
+      <eph>Document Object Model</eph> or 'DOM'. The browser then displays the contents of the DOM. 
+      <a href="https://mdn.mozillademos.org/files/11781/rendering.svg">(Visual Example)</a>
+      <br>
+      <p>A DOM has a tree structure, where each element, attribute and text becomes a 
+      <a href="https://developer.mozilla.org/en-US/docs/Glossary/Node/DOM"><emp>DOM Node. </emp></a>
+      DOM Nodes have a parent/child relationship. Some elements are parents of 'child nodes', child nodes can hace 'sibling nodes'.</p>
+      <p>As an example: 
+      <br>
+      <img src="./images/css1.PNG">
+      <br>
+      ...would be represented as:
+      <br>
+      <img src="./images/css2.PNG">
+      <br>
+      ...where the &ltp&gt element is the parent DOM node of the text and &ltspan&gt elements. The &ltspan&gt elements are DOM note siblings
+      along with the text, and the &ltspan&gt elements are also parent DOM nodes of other text that are siblings.  
+ 
+    <h2>Applying CSS to HTML</h2>
+      <p>An external stylesheet is usually a text file with a .css extension, referenced in a HTML file using the &ltlink&gt element 
+      in the HTML header. Usually something like: &ltlink rel="stylesheet" href="style.css"&gt.</p>
+      <p>It is also possible for an internal stylesheet within the HTML file. Try to avoid this, but if required the CSS elements and properties 
+      would be contained within the &ltstyle&gt element contained within the html header. </p>
+      <p>Again, try to avoid, but it is also possible for inline styles that are contained within a "style" attribute within the element. 
+      This affects the one element only, and looks like: &lth1 style="color:blue;border:solid black;"&gt .</p>
+      
+  <h1>CSS Syntax</h1>
+    <h2>Vocabulary</h2>
+
+  
+  </body>
+</html>

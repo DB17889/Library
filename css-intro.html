@@ -16,9 +16,8 @@
   <h1>How CSS Works</h1>
     <h2>What is CSS?</h2>
       <p>CSS is a language for specifying how a page page is presented.
-      <br><br>
+      </p><p>
       A CSS document is usually a text file consisting of:
-      <br>
       <ul>
           <li><strong>Properties:</strong> Attributes that have values that define how something looks, e.g. this font should be blue and size 12
           or this element should be 50% the width of the parent and aligned to the right.</li>
@@ -185,7 +184,49 @@
     </p>
 
     <h1>CSS Values and Units</h1>
-    
+    <h2>Numeric Values</h2>
+    <p>In most cases, sizes for things such as <span class="code">border</span> and 
+      <span class="code">margin</span> are done in pixels or <span class="code">px</span>. 
+      It's also possible to put sizes as quarter mm, mm, cm or inches (<span class="code">q</span>,
+      <span class="code">mm</span>, <span class="code">cm</span>,
+      <span class="code">in</span>) but these are rarely used.      
+    </p>
+    <p>Pixels are <i>absolute</i> units as they'll always be the same. There are also 
+      <i>relevate</i> units available to use, which are reletive to the current elements
+      <span class="code">font-size</span> or 'viewport' size. Including:
+      <ul>
+        <li><span class="code">em:1em</span> is the same as the font size of the current
+        element. The default font size given to web pages before CSS styling kicks in
+        is 16 pixes, so 1<span class="code">em</span> is 16 pixels.</li>
+        <li><span class="code">ex</span>, <span class="code">ch</span>. Not used 
+        often. Respectively, these are the height of a lower case 'x' and the width of
+        the number 0.</li>
+        <li><span class="code">rem</span> is the 'root <span class="code">em</span>'
+        and works in the same way as <span class="code">em</span> except it will always
+        equal the default base font size instead of inherited font sizes.</li>
+        <li><span class="code">vw</span>, <span class="code">vh</span>. Respectively these
+        are 1/100th of the viewport width and 1/100th of the viewport hight. Not as widely
+        used as <span class="code">em</span>.</li>
+      </ul>
+    ...so <span class="code">px</span> and <span class="code">em</span> is the way 
+    forward, but it's recommended that <span class="code">em</span> is good to use as 
+    its relative to the font size.
+    </p>
+    <p>Some values are unitless. For example, using just <span class="code">0</span>
+    can be used instead of <span class="code">0em</span>, or for something like 
+    <span class="code">line-height</span> the value can be just 1.5 without a unit
+    to specify a 1.5 line height based on the default font size.
+    </p>
 
+    <h2>Percentages</h2>
+    <p>Percentages can also be used to represent numeric values. This allows boxes to
+      always resize by a certain percentage of their parent containers width. Typically,
+      compared to the parents <span class="code">px</span> or <span class="code">em</span> 
+      sizewhich says the same. 
+    </p>
+    <p>As an example of parent-child relationships, and percentages:</p>
+    <img src="css3.PNG">
+    <p>...results in the following:</p>
+    <img src="css4.PNG">
   </body>
 </html>

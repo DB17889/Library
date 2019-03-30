@@ -1,20 +1,17 @@
+
+
 .code {
-    border:solid darkblue 1px;
+    border:solid rgb(141, 141, 245) 1px;
     background-color: rgb(240, 205, 192);
     border-radius: 12%;
-    font-size: 12px;
-}
-
-.header {
-    width: 100%;
-    background-color: lightgray;
-    height: 30px;
-    position: relative;
+    margin-top: 0px;
 }
 
 h1 {
     text-align: center;
     text-decoration: underline;
+    margin-top: 1em;
+    margin-bottom: -0.5em;
 }
 
 h2 {
@@ -25,3 +22,12 @@ img {
     border: solid black 3px;
     margin: 10px auto 10px 50px;
 }
+
+p, li {
+    line-height: 1.5;
+}
+
+
+
+
+

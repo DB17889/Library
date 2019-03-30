@@ -1,6 +1,8 @@
 .code {
     border:solid darkblue 1px;
-    background-color: lightsalmon;
+    background-color: rgb(240, 205, 192);
+    border-radius: 12%;
+    font-size: 12px;
 }
 
 .header {
@@ -17,4 +19,9 @@ h1 {
 
 h2 {
     text-decoration: underline;
+}
+
+img {
+    border: solid black 3px;
+    margin: 10px auto 10px 50px;
 }

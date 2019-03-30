@@ -139,16 +139,52 @@
         <li><span class="code">[attr~=val]</span> is a selector like the one above,
         but acting on one of a space-separated list of words contained in 
         <span class="code">[attr]</span>'s value.</li>
-        <li><span class="code">[attr^=val]</span> is a sector which will select all
+        <li><span class="code">[attr^=val]</span> is a selector which will select all
         elements with attribute <span class="code">attr</span> that starts with val.</li>
-        <li><span class="code">[attr$=val]</span>is a sector which will select all
+        <li><span class="code">[attr$=val]</span> is a selector which will select all
          elements with attribute <span class="code">attr</span> that ends with val.</li>
-        <li><span class="code">[attr*=val]</span>is a sector which will select all
+        <li><span class="code">[attr*=val]</span> is a selector which will select all
         elements with attribute <span class="code">attr</span> that contains 
         substring val.</li>
       </ul>
     </p>
     <h2>Pseudo-Classes</h2>
+    <p>A pseduo-class is a keyword added to the end of a selector. This is to signify
+      that the style should only apply to the element when the element is in a certain
+      state. For example, only styling an element if mouseovered, or a check box when
+      enabled or disabled. The pseudo-class keyword is preceded with a 
+      <span class="code">:</span>. There is a set list available online.
+    </p><p>
+      For example: <span class="code">a:hover</span> selector would apply the style when
+      the <span class="code">a</span> link is hovered over. 
+    </p>
+    <h2>Pseudo-Elements</h2>
+    <p>
+      Pseudo-elements are like pseudo-classes, but with key differences. They can be 
+      added to the end of selectors to select a certain part of the element. They are 
+      keywords frocessed with <span class="code">::</span>. For example, you could apply
+      the following pseudo-element on the <span class="code">href</span> element to say
+      add an arrow after the http: <span class="code">[href^=http]::after { }</span>.
+    </p>
+    <h2>Combinators</h2>
+    <p>
+      CSS electors can be combined in various ways. 
+      <ul>
+        <li><b>Selector List:</b> Simply a list of selectors such as 
+          <span class="code">A, B</span>.</li>
+        <li><b>Descendant Combinator:</b> Two elements are listed, where any situations 
+          where the second is a descendent of the first (e.g. child, grandchild etc.) For 
+          example: <span class="code">A B</span></li> 
+        <li><b>Child Combinator:</b> Like a descendard combinator, but only when the 
+          second elemend is a direct child of the first: <span class="code">A &gt B</span>.</li>
+        <li><b>Adjacent Sibling Combinator:</b> The next element that is a sibling of another
+          element and shares the same parent: <span class="code">A + B</span>.</li>
+        <li><b>General Simbling Combinator:</b> Similar to above, but applies not just 
+          to the next one: <span class="code">A ~ B</span>.</li> 
+      </ul>
+    </p>
+
+    <h1>CSS Values and Units</h1>
     
 
   </body>

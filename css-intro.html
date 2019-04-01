@@ -228,5 +228,66 @@
     <img src="./images/css3.PNG" class="css4">
     <p>...results in the following:</p>
     <img src="./images/css4.PNG" class="css4">
+
+    <h2>Colors</h2>
+    <p>CSS has the standard color range available of about 16.7m colors, all a combination of different 
+      red, green and blue options with 256 per option. There are a variety of ways to assign a color in 
+      CSS. 
+    </p>
+
+    <h3>keywords</h3>
+    <p>The simplest option is to use color keywords which are simply specific strings. There are 165
+      keywords available, and all are available to view 
+      <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/color_value#Color_keywords">here</a>.
+    </p>
+
+    <h3>Hexadecimal Values</h3>
+    <p>Hex codes consist of a octothorpe followed by 6 hexadecimal numbers. A hexadecimal number takes 
+      a value of 0 to f, so 0123456789abcdef, where a to f represent numbers 10 to 15. Each pair or the 
+      6 numbers represends one of the 3 RGB options from 0 to 256, of 00 to ff. For example, 
+      <span class="code">#ff0000</span> is equivelent to 256, 0, 0, or solid red, where 256 comes from 
+      f x f, or 16 x 16. Or <span class="code">#0000ff</span> is equivelent to 0, 0, 256, or solid blue, 
+      and so on. 
+    </p><p>
+      Any color can be represented using hex codes, although it's not too clear to understand easily.
+    </p>
+
+    <h3>RGB</h3>
+    <p>RGB works very much the same as hex codes, but is represented differently using 
+      <span class="code">rgb(,,)</span>. For example, <span class="code">rgb(255,0,0)</span> would 
+      be red, or <span class="code">rgb(0,0,255)</span> would be blue.
+    </p><p>RGB is generally just as well supported as hexadecimals, and is easier to view.</p>
+
+
+    <h3>HSL</h3>
+    <p>HSL, or Hue, Saturation and Lightness, is a diffent way of distibushing between the 16.7m 
+    colours. The syntax is <span class="code">hsl(,,)</span>, where instead of up to 255 for the numbers
+    after for red, blue and green, you enter:
+    <ul>
+      <li><b>hue:</b> is the base shade of colour,  with a value between 0 and 360 taken from a color wheel.</li>
+      <li><b>saturation:</b> is how saturated is the color, from 0% for no saturation (appears as a shade of
+      grey) to 100% for full saturation.</li>
+      <li><b>lightness:</b> is how bright is the color, with a value between 0% for no light (appears as 
+      black) to 100% for full light (appears as white).</li>
+    </ul>
+    </p>
+
+    <h3>RGBA and HSLA</h3>
+    <p>RGB and HSL have corresponding modes, RGBA and HSLA, where A represents the transparancy of the 
+      colour. The transaparancy, or 'alpha value', is a decimal value ranging from 0 to 1 where 0 is 
+      completely transparant and 1 is completely opaque. Note that this only sets the color as transparant;
+      to make a full selector transparant, use the opacity property.
+    </p>
+
+    <h2>Functions</h2>
+    <p>A function is a reusable section of code. Functions in CSS are property values that are followed
+      by parenthesis, such as <span class="code">rgb()</span> or <span class="code">hsl()</span>.
+      Other functions include things like <span class="code">rotate()</span>, <span class="code">translate()</span>,
+      <span class="code">calc()</span> and <span class="code">url()</span>.
+    </p>
+
+    <h1>Cascade and Inheritance</h1>
+    
+
   </body>
 </html>

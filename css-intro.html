@@ -367,6 +367,23 @@
       where the box needs specific properies defining.
     </p>
     <h2>Box Properties</h2>
+    <p>The following are key properties for boxes:
+      <ul>
+        <li><span class="code">width</span></li> and <li><span class="code">height</span>: These determine
+        the size of the content box, which is where the content is held. Content can include text and images,
+        or other child elements and boxes.</li>
+        <li><span class="code">padding</span>: This determines the inner margin of the CSS box - between the
+        outside edge of the content box and the inner edge of the border.</li>
+        <li><span class="code">border</span>: This sits between the outer edge of the padding, and 
+        the inner edge of the margin. By default, all borders are 0, so are invisibile.</li>
+        <li><span class="code">margin</span>: This surrounds the CSS box. It pushes against the inner edge 
+        of other CSS boxes/elements. Margins apply the concept of <i>margin collapsing</i> which means
+        that when two boxes touch against one another, the distance between them is the value of the 
+        largest of the two touching margins, and not their sum.</li>
+      </ul>
+    As a visual example: 
+    <img src="./images/css6.PNG" ID="css6">
+    </p>
 
   </body>
 </html>

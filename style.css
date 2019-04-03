@@ -29,7 +29,11 @@ p, li {
     text-align: justify;
 }
 
-#css3, #css4, #css5 {
+li {
+    padding-right: 2em;
+}
+
+#css3, #css4, #css5, #css6, #css7 {
     width: 400px;
 }
 

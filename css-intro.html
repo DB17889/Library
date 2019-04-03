@@ -367,11 +367,9 @@
       where the box needs specific properies defining.
     </p>
     <h2>Box Properties</h2>
-<<<<<<< HEAD
-=======
     <p>The following are key properties for boxes:
       <ul>
-        <li><span class="code">width</span></li> and <li><span class="code">height</span>: These determine
+        <li><span class="code">width</span> and <span class="code">height</span>: These determine
         the size of the content box, which is where the content is held. Content can include text and images,
         or other child elements and boxes.</li>
         <li><span class="code">padding</span>: This determines the inner margin of the CSS box - between the
@@ -383,10 +381,15 @@
         that when two boxes touch against one another, the distance between them is the value of the 
         largest of the two touching margins, and not their sum.</li>
       </ul>
-    As a visual example: 
-    <img src="./images/css6.PNG" ID="css6">
+      As a visual example: 
+    <br><img src="./images/css6.PNG" ID="css6">
+    </p><p>
+      By default, the height and width of the box model is based on the outer edge of the content, so 
+      the entire box model is larger if there is padding and a border. It is possible to switch a specific
+      box model so that the height and width is based on the outer edge of the border instead, thus including
+      the padding and border thickness. This is done using the propery <span class="code">box-sizing</span>
+      with the value <span class="code">border-box</span>.
     </p>
->>>>>>> b967307f3997452406bada69219528d1e8ed8d0c
 
   </body>
 </html>

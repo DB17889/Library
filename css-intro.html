@@ -389,6 +389,46 @@
       box model so that the height and width is based on the outer edge of the border instead, thus including
       the padding and border thickness. This is done using the propery <span class="code">box-sizing</span>
       with the value <span class="code">border-box</span>.
+      </p><p>As a visual example: 
+      <br><img src="./images/css7.PNG" ID="css7">
+    </p>
+
+    <h2>Advanced Box Manipulation</h2>
+    <h3>Overflow</h3>
+    <p>
+      When a box is given a size with absolute values (i.e. fixed pixel width and height) the content
+      may not fit within the allowed size and it may overflow the box. To control this, use the 
+      <span class="code">overflow</span> property which can take many values, but most commonly:
+      <ul>
+        <li><span class="code">auto</span>: If there is too much content, the overflowing content
+        is hidden and scroll bars are shown to let the user scroll to view all content.</li>
+        <li><span class="code">hidden</span>: If there is too much content, the overflowing content
+        will be completely hidden from view.</li>
+        <li><span class="code">visible</span>: If there is too much content, the overflow content is
+        shown outside of the box. This is usually default behavious if the <span class="code">overflow</span>
+        property is not used.</li>
+      </ul>
+    </p>
+
+    <h3>Background Clip</h3>
+    <p>
+      Box backgrounds can be made up of colors or an image, stacked on top of each other, using 
+      <span class="code">background-color</span> and <span class="code">background-image</span>. By default,
+      backgrounds extend to the outer edge of the border. This can be changed using the 
+      <span class="code">background-clip</span> propery though with the following values:
+      <ul>
+        <li><span class="code">border-box</span>: The background extends to the outer edge of the border.</li>
+        <li><span class="code">padding-box</span>: The background extends to the outer edge of the padding, 
+        which is also the inner edge of the border.</li>
+        <li><span class="code">content-box</span>: The background extends to the outer edge of the content 
+        area, which is also the inner edge of the margin.</li>
+      </ul> 
+    </p>
+
+    <h3>Outline</h3>
+    <p>The <span class="code">outline</span> property looks like a borde which is not part of the box
+      model. It behaves like the border but is drown on top of the box without changing the size of the 
+      box. (Specifically, it sits within the margin area.)
     </p>
 
   </body>

@@ -225,9 +225,9 @@
       sizewhich says the same. 
     </p>
     <p>As an example of parent-child relationships, and percentages:</p>
-    <img src="./images/css3.PNG" class="css4">
+    <img src="./images/css3.PNG" ID="css3">
     <p>...results in the following:</p>
-    <img src="./images/css4.PNG" class="css4">
+    <img src="./images/css4.PNG" ID="css4">
 
     <h2>Colors</h2>
     <p>CSS has the standard color range available of about 16.7m colors, all a combination of different 
@@ -287,7 +287,86 @@
     </p>
 
     <h1>Cascade and Inheritance</h1>
-    
+    <p>Previously selectors have been covered. Sometimes there may be a situation where more than one CSS
+      rule applies to an element, so which CSS rule wins? This is controled by a mechanism called 
+      <b>cascade</b> and is related to inhertance from parents too. 
+      </p>
+
+    <h2>The Cascade</h2>
+    <p> CSS stands for <i>Cascading Style Sheets</i>, so the cascade is important. There are three factors
+      which determine the CSS rule that applies to an element and which get overwritten:
+      <ul>
+        <li>Importance</li>
+        <li>Specificity</li>
+        <li>Source Order</li>
+      </ul>
+    </p>
+    <h3>Importance</h3>
+    <p>Importance froms from a special syntax command <span class="code">!important</span> which <i>always</i>
+    wins and overrides other rules. For exmaple, <span class="code">background-color: red !important</span> would
+    override any other background-color rule.
+    </p><p>
+    The <span class="code">!important</span> rule can only be overwritten by either another 
+    <span class="code">!important</span> declaration of the same specificity but later on in the source
+    order, or by an <span class="code">!important</span> declaration with a higher specificity.
+    </p>
+
+    <h3>Specificity</h3>
+    <p>This is essentially a measure of how specific the selector is. Element selectors have low specificity
+      as it could apply many times. Class selectors have a higher specificity as classes are more specific
+      than general element selectors. ID selectors have even higher specificity as IDs are even more specific
+      than class selectors. 
+    </p><p>
+      Specificity is measurable using 4 digits:
+      <ul>
+        <li>Thousands: Score on in this column if the declaration is inside a <span class="code">style</span>
+        attribute, i.e. a direct inline style in the html code.</li>
+        <li>Hundreds: Score one in this column for each ID selector contained in the ovrall selector.</li>
+        <li>Tens:Score one in this column for each class selector, attribute seletor or pseduo-class 
+          contained within the overall selector.</li>
+        <li>Ones: Score one in this column for each element selector or pseudo-element contained within 
+          the overall selector.</li>
+      </ul>
+      The greatest total specificity value would 'win'. As an example:
+      <img src="./images/css5.PNG" ID="css5">
+    </p>
+
+    <h3>Source Order</h3>
+    <p>After importance and specificify, the next factor that kicks in for competing selectors of the 
+      same importance and specificify is source order. Later rules always override earlier rules.
+    </p>
+
+  <h2>Inheritance</h2>
+    <p>In CSS, some propery values applied to an element get inherited by the elements children, 
+      and others won't. For exaple, properties such as <span class="code">font-family</span> and 
+      <span class="code">color</span> properties are good to be inherited, as they can be set against
+      the <span class="code">&lthtml&gt</span> element and then apply to everything withing, unless 
+      overwritten by individual rules. Properties such as <span class="code">margin</span>, 
+      <span class="code">padding</span> and <span class="code">border</span> should not be inherited, 
+      as those are set at container element level and child elements are typically different. 
+    </p><p>
+      Generally, its common sense as to whether inhertance applies, but for each property type see more
+      details <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference">here</a>.
+    </p><p>
+      Inheritance can also be specified using the following four universal propery families:
+      <ul>
+        <li><span class="code">inherit</span>: Sets the property value to an element to be the same
+        as its parent element.</li>
+        <li><span class="code">initial</span>: Sets the property valur to be the same as the browsers default
+        style sheet. If no default applies, <span class="code">inherit</span> kicks in.</li>
+        <li><span class="code">unset</span>: Resets the proporty to its natural value.</li>
+        <li><span class="code">revert</span>: Reverts the property to that it would have been if no styles
+        had been applied to it.</li>
+        </ul>
+      For example, <span class="code">color: green</span> set at parent level, could be picked up at child
+      element level using <span class="code">color: inherit</span>.
+    </p>
+
+    <h1>The Box Model</h1>
+    <p>The CSS box model is the foundation of web page layout. Each element is represent as a rectangular box,
+      where the box needs specific properies defining.
+    </p>
+    <h2>Box Properties</h2>
 
   </body>
 </html>

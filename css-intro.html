@@ -431,5 +431,22 @@
       box. (Specifically, it sits within the margin area.)
     </p>
 
+    <h2>Types of CSS Boxes</h2>
+    <p>The above refers to block elements, however there are different types of boxes. This is specified
+      by the <span class="code">display</span> propery. There are many different values available, but 
+      the main three are: 
+      <ul>
+        <li><span class="code">block</span>: A block is a box that is stacked upon other boxes.</li>
+        <li><span class="code">inline</span>: An inline box is the opposite of a block box. It flows
+        with the documents text, so appears on the same line as surrounding text or other inline elements.
+      Width and height have no impact on the inline box; padding, margin and border set on inlne boxes update
+    the position of surrounding text, but not the surrounding block boxes. </li>
+        <li><span class="code">inline-block</span>: Is a combination of the first two. It flows with 
+        surrounding text and inline elements, without creating line break before and after it (like 
+      block does). But unlike just inline, an inline-block can be sized with width and height like
+    block does.</li>
+      </ul>
+    </p>
+
   </body>
 </html>

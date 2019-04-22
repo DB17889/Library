@@ -8,7 +8,7 @@
             
             <div class="chapter">
                 <h1>Introduction to Numbers</h1>
-                <p>JS has only one type of number.</p>
+                <p>Unlike other programming languages, JS has only one type of number.</p>
                 <p>A number can be writen with decimals or without decimals. A number that is extra 
                     small or extra large can be writen in scientific notation too.
                 </p>
@@ -17,6 +17,20 @@
                     var y = 3;      // Without decimals<br>
                     var a = 123e5;  // 12300000<br>
                     var b = 123e-5; // 0.00123
+                </p>
+                <p>JS doesnt have a variety of number types such integer, floating point etc.; instead
+                    JS numbers are always stored as double precision floating point numbers, following 
+                    international standard IEEE 754.
+                </p>
+                <p>This standard stores numbers in 64 bits, where the number is stored in bits 0 to 51,
+                    the exponent in bits 52 to 62, and the sign in bit 63. 
+                </p>
+                <p>Integers without a decimal or exponent notation are accurate up to 15 digits. For 
+                    example:
+                </p>
+                <p class="code-block">
+                    var x = 999999999999999; // x will be 999999999999999
+                    var y = 9999999999999999; // y will be 1000000000000000
                 </p>
             </div>
 

@@ -29,8 +29,104 @@
                     example:
                 </p>
                 <p class="code-block">
-                    var x = 999999999999999; // x will be 999999999999999
+                    var x = 999999999999999; // x will be 999999999999999 <br>
                     var y = 9999999999999999; // y will be 1000000000000000
+                </p>
+                <p>The maximum number of decimals in a floating point is 17, but note that 
+                    numbers and floating point maths isn't always accurate in JS. For example:
+                </p>
+                <p class="code-block">
+                    var x = 0.2 + 0.1; // x will be 0.30000000000000004
+                </p>
+                <p>There is a way to overcome this by multiplying then dividing by x, so:
+                </p>
+                <p class="code-block">
+                    var x = (0.2 * 10 + 0.1 * 10) / 10; // x will be 0.3
+                </p>
+            </div>
+
+            <div class="chapter">
+                <h1>Adding Numbers and Strings</h1>
+                <p>Before moving on to addition, remember than in JS, the + operator is used for both
+                    addition of numbers and concatenation of string. For example:
+                </p>
+                <p class="code-block">
+                    var x = 10; <br>
+                    var y = 20; <br>
+                    var z = x = y; // z will equal 30 (a number) <br>
+                    <br>
+                    var x = "10"; <br>
+                    var y = "20"; <br>
+                    var z = x + y; // z will be equal to 1020 (a string) <br>
+                </p>
+                <p>Bear in mind that adding a number and a string also result in concatenation, for 
+                    example:
+                </p>
+                <p class="code-block">
+                    var x = "10"; // a string <br>
+                    var y = 20; // a number <br>
+                    var z = x + y; // z will be 1020 (a string)
+                </p>
+                <p>But remember, JS works from left to right, so in the example below we have two actions
+                    taking place:
+                </p>
+                <p class="code-block">
+                    var x = 10; // a number <br>
+                    var y = 20; // a number <br>
+                    var z = "30"; // a string <br>
+                    var result = x + y + z; // this will be 3030
+                </p>
+                <p>...this is because JS, working left to right, first adds the numbers 10 and 20, then
+                    concetenates the resulting number of 30 to the sring 30.
+                </p>
+            </div>
+
+            <div class="chapter">
+                <h1>Numeric Strings</h1>
+                <p>JS strings can have numeric content, but remember, the + operator concatenates!
+                </p>
+                <p>For example, this will work:
+                </p>
+                <p class="code-block">
+                    var x = "100"; <br>
+                    var y = "10"; <br>
+                    var z = x * y; // z will be 1000.
+                </p>
+                <p>...as it converts the string to number using multiplication. Also, this will work:
+                </p>
+                <p class="code-block">
+                        var x = "100"; <br>
+                        var y = "10"; <br>
+                        var z = x / y; // z will be 10.
+                </p>
+                <p>...as it converts the string to number using division. This will work also:
+                </p>
+                <p class="code-block">
+                        var x = "100"; <br>
+                        var y = "10"; <br>
+                        var z = x - y; // z will be 90.
+                </p>
+                <p>...as it converts the string to number using subtraction. But this <u>will not</u>
+                work:</p>
+                <p class="code-block">
+                        var x = "100"; <br>
+                        var y = "10"; <br>
+                        var z = x + y; // z will be 10010.
+                </p>
+                <p>...as the + operator will default to concatenate string, not convert string to
+                    number.
+                </p>
+            </div>
+
+            <div class="chapter">
+                <h1>NaN - Not a Number</h1>
+                <p>In JS, "NaN" is a reserverd term which shows that a number is not a real number.
+                    Trying to do any calculations with a non-numeric string will result in "NaN".
+                </p>
+                <p>For example:
+                </p>
+                <p class="code-block">
+                    var x = 100 / "Apple"; // x will be NaN
                 </p>
             </div>
 

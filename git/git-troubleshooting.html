@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link href="./git-style.css" rel="stylesheet">   
+    </head>
+    <body>
+        <div class="page-container">
+            
+            <div class="chapter">
+                <h1>"fatal: bad object HEAD"</h1>
+                <p>When trying to run:</p>
+                <p class="code-block">$ git status</p>
+                <p>...and getting a bad oject HEAD as below:</p>
+                <p class="code-block">fatal: bad object HEAD</p>
+                <p>Then run:</p>
+                <p class="code-block">$ git fsck</p>
+                <p>And the output will be something like:</p>
+                <p class="code-block">
+                    error: object file .git/objects/44/9438f9c2f4a01114bb4d5d3f9364998d7129d6 is empty<br>
+                    error: unable to mmap .git/objects/44/9438f9c2f4a01114bb4d5d3f9364998d7129d6: No such file or directory<br>
+                    error: 449438f9c2f4a01114bb4d5d3f9364998d7129d6: object corrupt or missing: .git/objects/44/9438f9c2f4a01114bb4d5d3f9364998d7129d6<br>
+                    error: object file .git/objects/4d/4ca55594f8afaef2999d5902c0e475c324ac96 is empty<br>
+                    error: unable to mmap .git/objects/4d/4ca55594f8afaef2999d5902c0e475c324ac96: No such file or directory<br>
+                    error: 4d4ca55594f8afaef2999d5902c0e475c324ac96: object corrupt or missing: .git/objects/4d/4ca55594f8afaef2999d5902c0e475c324ac96<br>
+                    error: object file .git/objects/7d/cefcebcada147e5f7d993ec954f4806e1b7e35 is empty<br>
+                    error: unable to mmap .git/objects/7d/cefcebcada147e5f7d993ec954f4806e1b7e35: No such file or directory<br>
+                    error: 7dcefcebcada147e5f7d993ec954f4806e1b7e35: object corrupt or missing: .git/objects/7d/cefcebcada147e5f7d993ec954f4806e1b7e35<br>
+                    Checking object directories: 100% (256/256), done.<br>
+                    Checking objects: 100% (31/31), done.<br>
+                    error: HEAD: invalid sha1 pointer 6b90f6ac7462a3ce3a64efebd4abcc11b54b432b<br>
+                    error: refs/heads/master: invalid sha1 pointer 6b90f6ac7462a3ce3a64efebd4abcc11b54b432b<br>
+                    error: refs/remotes/origin/HEAD: invalid sha1 pointer 6b90f6ac7462a3ce3a64efebd4abcc11b54b432b<br>
+                    error: refs/remotes/origin/master: invalid sha1 pointer 6b90f6ac7462a3ce3a64efebd4abcc11b54b432b<br>
+                    notice: No default references<br>
+                    dangling blob 005cab4f7247e407c15b24c64b7de57d5d454895<br>
+                    dangling blob 10fa14c5ab0134436e2ae435138bf921eb477c60<br>
+                    dangling blob 1d58e384b8bb59665ae9af2a4dc9428df60f5867<br>
+                    dangling blob 31d2a3dfe9d34a4142e19156cdfc105525aeebd0<br>
+                    dangling blob 32e0a2e12b1dc331935fd14bc29caf432e1d9119<br>
+                    ...
+                </p>
+                <p>Notice files after "object corrupt or missing". In the case above there are three:</p>
+                <p class="code-block">
+                    .git/objects/44/9438f9c2f4a01114bb4d5d3f9364998d7129d6<br>
+                    .git/objects/4d/4ca55594f8afaef2999d5902c0e475c324ac96<br>
+                    .git/objects/7d/cefcebcada147e5f7d993ec954f4806e1b7e35
+                </p>
+                <p>Remove these files (or copy to a backup location). Then run:</p>
+                <p class="code-block">$ git fetch</p>
+                <p>This <i>should</i> resolve it, and will look something like:</p>
+                <p class="code-block">
+                    error: refs/heads/master does not point to a valid object!<br>
+                    error: refs/remotes/origin/HEAD does not point to a valid object!<br>
+                    error: refs/remotes/origin/master does not point to a valid object!<br>
+                    error: refs/heads/master does not point to a valid object!<br>
+                    error: refs/remotes/origin/HEAD does not point to a valid object!<br>
+                    error: refs/remotes/origin/master does not point to a valid object!<br>
+                    error: refs/heads/master does not point to a valid object!<br>
+                    error: refs/remotes/origin/HEAD does not point to a valid object!<br>
+                    error: refs/remotes/origin/master does not point to a valid object!<br>
+                    error: refs/heads/master does not point to a valid object!<br>
+                    error: refs/remotes/origin/HEAD does not point to a valid object!<br>
+                    error: refs/remotes/origin/master does not point to a valid object!<br>
+                    remote: Enumerating objects: 114, done.<br>
+                    remote: Counting objects: 100% (114/114), done.<br>
+                    remote: Compressing objects: 100% (95/95), done.<br>
+                    remote: Total 114 (delta 55), reused 46 (delta 16), pack-reused 0<br>
+                    Receiving objects: 100% (114/114), 158.60 KiB | 784.00 KiB/s, done.<br>
+                    Resolving deltas: 100% (55/55), done.<br>
+                    From github.com:DB17889/Library<br>
+                    * [new branch]      master     -> origin/master
+                </p>
+                <p>So then run this again:</p>
+                <p class="code-block">$ git status</p>
+                <p>...and hopefully back to normal!</p>
+            </div>
+
+        </div>
+    </body>
+</html>

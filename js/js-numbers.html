@@ -119,14 +119,45 @@
             </div>
 
             <div class="chapter">
-                <h1>NaN - Not a Number</h1>
-                <p>In JS, "NaN" is a reserverd term which shows that a number is not a real number.
+                <h1>NaN</h1>
+                <p>In JS, "NaN" is a reserved term which shows that a number is not a real number.
                     Trying to do any calculations with a non-numeric string will result in "NaN".
                 </p>
                 <p>For example:
                 </p>
                 <p class="code-block">
                     var x = 100 / "Apple"; // x will be NaN
+                </p>
+                <p>Although "NaN" is 'not a number', it's type is: number. For example:
+                </p>
+                <p class="code-block">
+                    typeof NaN; // returns "number"
+                </p>
+            </div>
+
+            <div class="chapter">
+                <h1>Infinity</h1>
+                <p>"Infinity", or "-Infinity", is what JS returns if the number calculated is outside
+                    the largest possible number.
+                </p>
+                <p>"Infinity" is also what is returned when trying to divide by zero. For example:
+                </p>
+                <p class="code-block">
+                    var x = 2 / 0; // x will be Infinity
+                </p>
+                <p>Like NaN, Infinity is also type: number. For example:
+                </p>
+                <p class="code-block">
+                    typeof Infinity; // returns "number"
+                </p>
+            </div>
+
+            <div class="chapter">
+                <h1>Hexadecimals</h1>
+                <p>If preceeded by 0x, JS interprets a Hexadecimal value as a number. For example:
+                </p>
+                <p class="code-block">
+                    var x = 0xFF // x will be 255
                 </p>
             </div>
 

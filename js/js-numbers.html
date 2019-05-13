@@ -161,6 +161,36 @@
                 </p>
             </div>
 
+            <div class="chapter">
+                <h1>Numbers as Objects</h1>
+                <p>In JS, normally numbers are a entity of their own - a number. However, 
+                    numbers can also be defined as an object using the keyword 'new'. For example:
+                </p>
+                <p class="code-block">
+                    var x = 123;<br>
+                    var y = new Number(123);<br>
+                    <br>
+                    typeof x // returns: Number<br>
+                    typeof y // returns: Object
+                </p>
+                <p>It not recommended to do this, as it can slow down execution speed, but need to 
+                    be aware of it.
+                </p>
+                <p>When using the == operator, JS recognises that although the type is different,
+                    numbers of the same value are equal. However, this is not the case using the 
+                    === operator as this checks both value and type. For example: 
+                </p>
+                <p class="code-block">
+                    var x = 500;<br>
+                    var y = new Number(500);<br>
+                    var z = new Number(500);<br>
+                    <br>
+                    // x == y returns returns true as the values are the same<br>
+                    // x === y returns false as even though the values are the same, the type is not.
+                    // y === z returns false as objects alone cannot be compared.
+                </p>
+            </div>
+
         </div>
     </body>
 </html>

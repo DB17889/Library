@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<head>
+    <link href="./js-style.css" rel="stylesheet">
+</head>
+<body>
+
+    <div class="chapter">
+        <h1>Introduction to Variables</h1>
+        <p>A variable is essentially a named storage area for data. To create a variable, use the 'let'
+            keyword. (You may see 'var' instead of 'let'; this is fine, but try and stick to 'let' as this
+            is newer.) For example, to create a variable, or 'define' / 'declare' a variable:
+        </p>
+        <p class="code-block">
+            let message; // declares a variable called 'message'
+        </p>
+        <p>...this is just an empty variable. To assign data to the variable, use the assignment 
+            operator as below:
+        </p>
+        <p class="code-block">
+            let message;<br>
+            message = "Hello World!";
+        </p>
+        <p>...this then stores the string data 'Hello World!' to the memory area associated with the variable.
+            This can be viewed using the alart command:
+        </p>
+        <p class="code-block">
+            alert(message); // returns 'Hello World!'
+        </p>
+        <p>For simplicity, the variable declration and the assignment of data can be completed in one go:
+        </p>
+        <p class="code-block">
+            let message = 'Hello World!'; // declares the variable and assigns data in one go
+        </p>
+        <p>You can also declare multiple variables and assign data to them in one go too, for example:
+        </p>
+        <p class="code-block">
+            let user = 'Dan', age = 29, message = 'Hello World!';
+        </p>
+        <p>...HOWEVER, whilst this might seem shorted, its not recommended from a code readability
+            perspective. Declaring across multiple lines is the 'correct' thing to do, for example:
+        </p>
+        <p class="code-block">
+            let user = 'Dan';<br>
+            let age = 29;<br>
+            let message = 'Hello World!';
+        </p>
+        <p>Or, you may see this as:
+        </p>
+        <p class="code-block">
+            let user = 'Dan'<br>
+            , age = 25<br>
+            , message = 'Hello World!';
+        </p>
+        <p>A variable can be changed later in the code. For example:
+        </p>
+        <p class="code-block">
+            let message = 'Hello!'; // value stored as 'Hello!'<br>
+            message = 'Goodbye!'; // value changed to 'Goodbye!'
+        </p>
+        <p>And a variable value can be assigned to another variable, using the variable. For example;
+        </p>
+        <p class="code-block">
+            let hello = 'Hello!';<br>
+            let message;<br>
+            <br>
+            message = hello;<br>
+            <br>
+            alert(hello); // returns 'Hello!'<br>
+            alert(message); // returns 'Hello!'
+        </p>
+    </div>
+
+    <div class="chapter">
+        <h1>Naming Variables</h1>
+        
+    </div>
+
+</body>

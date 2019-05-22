@@ -72,7 +72,54 @@
 
     <div class="chapter">
         <h1>Naming Variables</h1>
-        
+        <p>There are a couple of restrictions when it comes to naming Variables:
+        </p>
+        <ul>The name can only contain letters, digits or the symbols $ and _.</ul>
+        <ul>The first chracter must not be a character.</ul>
+        <p>Often is JS, variables are named using camelCase if the variable is more than one word long,
+            where the first words first character is lower case. For example: variableName or 
+            thisIsMyVariable.
+        </p>
+        <p>Note that case DOES matter. For example, a variable called 'variable' is not the same as
+            a variable called 'vARIABLE'.
+        </p>
+        <p>There are a list of reserved words that cannot be used as variables, as JS uses them for 
+            specific functions, for example 'let', 'class' and 'function'. A full list of reserved 
+            words is available <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Lexical_grammar#Keywords">
+            here</a>.
+            </p>        
+    </div>
+
+    <div class="chapter">
+        <h1>Constant Variables</h1>
+        <p>To declare a constant variable, i.e. one that does not change, use 'const' instead of 
+            'let'.
+        </p>
+        <p class="code-block">
+            const myBirthday = '17.08.1989';
+        </p>
+        <p>Variables declared using const are called 'constants'. Any attempt to change the data will
+            result in error. For example:
+        </p>
+        <p class="code-block">
+            const myBirthday = '17.08.1989';<br>
+            myBirthday = '01.01.1989'; // results in error as cannot reassign a constant.
+        </p>
+        <h2>Uppercase Constants</h2>
+        <p>It's common practise for constants to be used as a shortcut for commonly used difficult-to-remember
+            values known before execution. This common practise typically uses capital letters and underscores.
+            For example:
+        </p>
+        <p class="code-block">
+            const COLOR_RED = "#F00";<br>
+            const COLOR_GREEN = "#0F0";<br>
+            const COLOR_BLUE = "00F";<br>
+            const COLOR_ORANGE = "#FF7F00"<br>
+            <br>
+            //meaning later, to pick a color use:<br>
+            let color = COLOR_ORANGE;
+        </p>
+
     </div>
 
 </body>

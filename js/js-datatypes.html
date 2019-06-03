@@ -28,7 +28,83 @@
     </div>
 
     <div class="chapter">
-        
+        <h1>Data Type: Number</h1>
+        <p>A number represents both integer and floating point numbers. There are many operators which 
+            can act on numbers, such as *, /, + and -. 
+        </p>
+        <p>As well as regular numbers, there are 'special' number types:</p>
+        <ul>
+            <li><b>Infinity:</b> Represents mathematical infinity. We get this when the number is too large, 
+                or as a result of dividing by zero.
+            </li>
+            <li><b>NaN:</b> Not a Number. Occurs as a result of computational error. For example, dividing a
+                number by a word.
+            </li>
+        </ul>
+    </div>
+
+    <div class="chapter">
+        <h1>Data Type: String</h1>
+        <p>A string is JS is text surrounded by quotes. There are three types of quotes:</p>
+        <ol>
+            <li><b>Double quotes:</b> "Hello"</li>
+            <li><b>Single quotes:</b> 'Hello'</li>
+            <li><b>Backticks:</b> `Hello`</li>
+        </ol>
+        <p>In JS, double quotes and single quotes do the same thing and are both considered as 'simple
+            quotes'. Backticks are 'extended functionality quotes', which allows variables and expressions
+            to be embedded within the string when wrap within ${}. For example:
+        </p>
+        <p class="code-block">
+            let name = "Dan"; <br><br>
+            // embed a variable<br>
+            alert(`Hello ${name}!`); // Returns: Hello Dan! <br><br>
+            // embed an expression<br>
+            alert(`The result is ${1+1}.`); Returns: The result is 2.
+        </p>
+        <p>...remember, embedding variables or expressions can only be done when using backticks with
+        ${}.</p>
+    </div>
+
+    <div class="chapter">
+        <h1>Data Type: Boolean</h1>
+        <p>A boolean type only has two values: true and false. Most commonly used in yes/no scenerios,
+            where yes = true and no = false.
+        </p>
+    </div>
+
+    <div class="chapter">
+        <h1>Data Type: null</h1>
+        <p>The null data type is special type which represents 'unknown' or 'empty'. It's important to
+            remember that null does not mean 'referencing something which does not exist'. For example:
+        </p>
+        <p class="code-block">
+            let age = null;
+        </p>
+        <p>...not that age does exist, it is just empty and unknown.</p>
+    </div>
+
+    <div class="chapter">
+        <h1>Data Type: undefined</h1>
+        <p>Like null, undefinred is a special type of its own, where undefined represents 'not yet 
+            assigned'. For example, a variable is declared, but not value is assigned to it, such as:
+        </p>
+        <p class="code-block">
+            let x;<br><br>
+            alert(x); // returns "undefined"
+        </p>
+    </div>
+
+    <div class="chapter">
+        <h1>Data Type: Object</h1>
+        <p>The object type is different to those covered so far. Those covered so far are 'primitive' data
+        types as they can only contain a single thing, i.e. a number, string etc. However, objects store 
+        a collection of data and compex entities.</p>
+    </div>
+
+    <div class="chapter">
+        <h1>Data Type: Symbol</h1>
+        <p>The symbol object data type creates unique identifiers for objects. For on this later.</p>
     </div>
     
 </body>

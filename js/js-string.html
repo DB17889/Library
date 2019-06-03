@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<head>
+    <link href="./js-style.css" rel="stylesheet">
+</head>
+<body>
+
+    <div class="chapter"> 
+        <h1>Introduction to Strings</h1>      
+        <p>String can be contained within either single quotes or double quotes. Ideally, stick to the same
+            one throughout code. For example:
+        </p>
+        <p class="code-block">
+            let a = "text" // this is fine<br>
+            let b = 'text' // this is fine<br>
+            let c = "text' // this will return error<br>
+            let d = text // this will return error
+        </p>
+        <p>If single or double quotes are required within a string, the \ escape character may be required.
+            For example:
+        </p>
+        <p class="code-block">
+            let a = "This is a "quote" type quote" // this will work<br>
+            let b = 'I'm typing a quote' // this will not work 
+        </p>
+        <p>To prevent the single quote in "I'm" from closing the string quote, us \ to escape it, like:</p>
+        <p class="code-block">
+            let b = 'I/'m typing a quote' // this will work
+        </p>
+    </div>
+
+    <div class="chapter">
+        <h1>Concatenating Strings</h1>
+        <p>String can be concatenated using the + operator. For example</p>
+        <p class="code-block">
+            let one = "Hello, ";<br>
+            let two = "how are you?";<br>
+            let joined = one + two;<br>
+            joined; //returns: Hello, how are you?
+        </p>
+        <p>A string can be concatenated multiple times. For example:</p>
+        <p class="code-block">
+            let multiple = one + one + one;<br>
+            multiple; // returns: Hello, Hello, Hello, 
+        </p>
+        <p>And both variables and string can be concatenated, like this:</p>
+        <p class="code-block">
+            let lyric = one + "is it me you/'re looking for?";<br>
+            lyric; // returns: Hello, is it me you're looking for?
+        </p>
+    </div>
+
+    <div class="chapter">
+        <h1>String & Numbers</h1>
+        <p>If you concatenate a number and a string, JS cleverly converts the number into string and 
+            joins them. For example:
+        </p>
+        <p class="code-block">
+            'Word' + 123; // 123 converted to string and returns: Word123
+        </p>
+        <p>You can even do this with just numbers, by forcing the number into string by using quote
+            marks to wrap it in. For example:
+        </p>
+        <p class="code-block">
+            let date = "19" + "89";
+            date; returns: 1989
+        </p>
+        <p>To convert a number/string data type, use Number() or toString():</p>
+        <p class="code-block">
+            let myString = "123";<br>
+            let myNum = Number(myString);<br>
+            typeof myNum; // returns: number
+        </p>
+        <p class="code-block">
+            let myNum = 123;<br>
+            let myString = nyNum.toString();<br>
+            typeof myString; // returns: string 
+        </p>
+        <p>Note the difference syntax, i.e. 'Number(myString)' vs 'myNum.toString().</p>
+        <p>In real life, this can be useful when converting numeric values entered into a text form by
+            a user.
+        </p>
+    </div>
+
+    <div class="chapter">
+        <h1>UP NEXT - STRINGS STEP 2</h1>
+    </div>
+
+</body>

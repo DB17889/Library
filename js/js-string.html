@@ -82,7 +82,108 @@
     </div>
 
     <div class="chapter">
-        <h1>UP NEXT - STRINGS STEP 2</h1>
+        <h1>String Length</h1>
+        <p>Use the length property to return the length of a string. For example</p>
+        <p class="code-block">
+            var txt = "ABCDE";<br>
+            var txtlen = txt.length; // Returns '5'.
+        </p>
+    </div>
+
+    <div class="chapter">
+        <h1>Find String Within a String</h1>
+        <p>Use the indexOf() method to return the position (or 'index') of the FIRST occurance of the
+            specified string. For example:
+        </p>
+        <p class="code-block">
+            var str = "Please locate where the word locate occurs.";<br>
+            var pos = str.indexOf("locate"); // Returns '7' to indicate the 7th character where it starts.
+        </p>
+        <p>Use the lastIndexOf() method to return the index of the LAST occurance of the specified string.
+            For example:
+        </p>
+        <p class="code-block">
+            var str = "Please locate where the word locate occurs.";<br>
+            var pos = str.indexOf("locate"); // Returns '21' to indicate the 21sa character where it starts        </p>
+        <p>For both indexOf() and lastIndexOf(), if no string is found, '-1' is returned.</p>
+        <p>Both indexOf() and lastIndexOf() also accept a second parameter. This determines the starting 
+            position for the search. For example:
+        </p>
+        <p class="code-block">
+            var str = "Please locate where the word locate occurs.";<br>
+            var pos = str.indexOf("locate", 15); // Returns '21', as the STARTING position of the search was 
+            character 15. 
+        </p>
+        <p>...where lastIndexOf() works backwards. For example:</p>
+        <p class="code-block">
+            var str = "Please locate where the word locate occurs.";<br>
+            var pos = str.lastIndexOf("locate", 15); // Returns '7', as the STARTING position of the search 
+            was character 15, working BACKWARDS.
+        </p>
+        <p>Note that the search() method does the same as the indexOf() method, however there are key differences
+            between the two:
+            <UL>
+                <li>The search() method cannot take a start position arguement.</li>
+                <li>The indexOf() method cannot take powerful search values (regular expressions).</li>
+            </UL>
+        </p>
+    </div>
+
+    <div class="chapter">
+        <h1>Extracting String Parts</h1>
+        <p>There are three methods of extracting part of a string:</p>
+        <ol>
+            <li>slice(start, end)</li>
+            <li>substring(start, end)</li>
+            <li>substr(start, lenght)</li>
+        </ol>
+
+        <h2>The slice() Method</h2>
+        <p>The slice() method extracts part of a string and returns the extracted part as a new string. The
+            method takes two paratmeters: (1) The start position; (2) The end position (exclusive). 
+            For example:
+        </p>
+        <p class="code-block">
+            var str = "Apple, Banana, Kiwi";<br>
+            var res = str.slice(7, 13); // Returns "Banana", i.e. positions 7 to 12 (as 13 is excluded).
+        </p>
+        <p><b>REMEMBER:</b> JS counts start at zero, so the first position is 0.</p>
+        <p>You can als work backwards from the end of a string. For example:</p>
+        <p class='code-block'>
+            var str = "Apple, Banana, Kiwi";<br>
+            var res = str.slice(-12, -6); // Returns "Banana", i.e. 12th position from the end to the 6th
+            position from the end (exclusive).
+        </p>
+        <p>If the second parameter is omitted, the method will slice the rest of the string out. 
+            For example:</p> 
+        <p class="code-block">
+            var str = "Apple, Banana, Kiwi";<br>
+            var res = str.slice(7); // Returns "Banana, Kiwi"
+            var rez = str.slice(=12); // Returns "Banana, Kiwi"
+        </p>
+
+        <h2>The substring() Method</h2>
+        <p>The substring() method is similar is slice(), although substring() is unable to accept 
+            negative index arguements.</p>
+
+        <h2>The substr() Method</h2>
+        <p>The substr() method is similar to slice(), the key difference being that the second parameter 
+            specifies the lenght of the extracted string, not the end point. For example:</p>
+        <p class="code-block">
+            var str = "Apple, Banana, Kiwi";<br>
+            var res = str.substr(7, 6); // Returns "Banana", i.e. starts at position 7 and picks out 
+            6 characters. 
+        </p>
+        <p>As with slice(), you can use a negative value as the first argument to pick the starting point
+            from the end of the string. You can also omit the second argument to pick out the rest of the 
+            string.
+        </p>
+    </div>
+
+    <div class="chapter">
+        <h1>Replacing String Content</h1>
+        <p>ABOUT 40% OF THE WAY DOWN OF STRINGS STEP 2.</p>
+
     </div>
 
 </body>

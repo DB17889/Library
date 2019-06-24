@@ -182,8 +182,114 @@
 
     <div class="chapter">
         <h1>Replacing String Content</h1>
-        <p>ABOUT 40% OF THE WAY DOWN OF STRINGS STEP 2.</p>
+        <h2>The replace() Method</h2> 
+        <p>The replace() method replaces a specified value with another value in a string. For example:</p>
+        <p class="code-block">
+            str = "Please Visit Microsoft!";
+            var n = str.replace("Microsoft", "Google");
+        </p>
+        <p>Note that replace() does not alter the original string that the method calls on. It simply creates
+            a new string against the new variable with the updated string. 
+        </p>
+        <p>Note that replace() also replaces only the first match in the string. You can use a regular expression
+            with a "/g" flag to overcome this for a global match. For example:
+        </p>
+        <p class="code-block">
+            str = "Please Visit Microsoft and Microsoft!";
+            var n = str.replace(/Microsoft/g, "Google")
+        </p>
+        <p>By default, the replace() method is case sensitive, but this can be overcome using the "/i"
+            flag for case insensitive. For example:
+        </p>
+        <p class="code-block">
+            str = "Please Visit Microsoft!";
+            var n = str.replace(/MICROSOFT/i, "Google"); 
+        </p>
+        <h2>The toUpperCase() Method and toLowerCase() Method</h2>
+        <p>To convert a full string to upper case, use the toUpperCase() method. For example:</p>
+        <p class="code-block">
+            var text1 = "Hello World!";
+            var text2 = text1.toUpperCase();
+        </p>
+        <p>To convert a full string to lower case, use the toLowerCase() method. For example:</p>
+        <p class="code-block">
+            var text1 = "Hello World!";
+            var text2 = text1.toLowerCase();
+        </p>
+    </div>
 
+    <div class="chapter">
+        <h1>Joining Strings</h1>
+        <p>To join two or more strings, use the concat() method. For exmaple:</p>
+        <p class="code-block">
+            var text1 = "Hello";
+            var text2 = "World";
+            var text3 = text1.concat(" ", text2); // Returns "Hello World"
+        </p>
+        <p>The plus operator can also be used in addition to the plus operator. For example:</p>
+        <p class="code-block">
+            var text = "Hello" + " " = "World!";
+            var text = "Hello".concat(" ", "World!");
+        </p>
+        <p>Remember, changing string does not replace the original string. It creates a new one.</p>
+    </div>
+
+    <div class="chapter">
+        <h1>Trimming String</h1>
+        <p>The trim() method can be used to remove whitespace from either side of a sting. For example:</p>
+        <p class="code-block">
+            var str = "     Hello World!     ";
+            alert(str.trim()); // Returns "Hello World!"
+        </p>
+    </div>
+
+    <div class="chapter">
+        <h1>Extracting String Characters</h1>
+        <p>There are thre methods for extracting string characters:</p>
+        <ol>
+            <li>charAt(position)</li>
+            <li>charCodeAt(position)</li>
+            <li>Property access []</li>
+        </ol>
+        <h2>The charAt() Method</h2>
+        <p>The charAt() method returns the character at the specified index in a string. Remember, in JS 
+            the position index starts at zero. For example:
+        </p>
+        <p class="code-block">
+            var str = "HELLO WORLD";
+            str.charAt(0); // Returns "H"
+        </p>
+        <h1>The charCodeAt() Method</h1>
+        <p>The charCodeAt() method returns the unicode of the chracter at the specified index in a string.
+            The method returns a UTF-16 code (integer between 0 and 65535). For example:
+        </p>
+        <p class="code-block">
+            vat str = "HELLO WORLD";
+            str.charCodeAt(0); // Returns "72"
+        </p>
+        <h2>Property Access</h2>
+        <p>ECMAScript 5 (2009) allows property access [] on strings. Note that this can be a little 
+            unpredictable and makes string look like arrays when they're not. If nothing is found, [] 
+            returns undefined whilst charAt() returns an emptry string which is more ideal. For example:
+        </p>
+        <p class="code-block">
+            var str = "HELLO WORLD";
+            str[0]; // Returns "H"
+        </p>
+    </div>
+
+    <div class="chapter">
+        <h1>Converting String to an Array</h1>
+        <p>A string can be converted into an array (of data) using the split() method. For example:</p>
+        <p class="code-block">
+            var txt = "a,b,c,d,e"; 
+            txt.split(","); // Split on commas
+            txt.split(" "); // Split on spaces
+            txt.split("|"); // Split on pipe
+        </p>
+        <p>If the separator specificed is omitted from the results. If the separator is "", then all 
+            characters are returned in an array.
+        </p>
     </div>
 
 </body>

@@ -158,8 +158,8 @@
             For example:</p> 
         <p class="code-block">
             var str = "Apple, Banana, Kiwi";<br>
-            var res = str.slice(7); // Returns "Banana, Kiwi"
-            var rez = str.slice(=12); // Returns "Banana, Kiwi"
+            var res = str.slice(7); // Returns "Banana, Kiwi"<br>
+            var rez = str.slice(-12); // Returns "Banana, Kiwi"
         </p>
 
         <h2>The substring() Method</h2>
@@ -185,7 +185,7 @@
         <h2>The replace() Method</h2> 
         <p>The replace() method replaces a specified value with another value in a string. For example:</p>
         <p class="code-block">
-            str = "Please Visit Microsoft!";
+            str = "Please Visit Microsoft!";<br>
             var n = str.replace("Microsoft", "Google");
         </p>
         <p>Note that replace() does not alter the original string that the method calls on. It simply creates
@@ -195,25 +195,25 @@
             with a "/g" flag to overcome this for a global match. For example:
         </p>
         <p class="code-block">
-            str = "Please Visit Microsoft and Microsoft!";
+            str = "Please Visit Microsoft and Microsoft!";<br>
             var n = str.replace(/Microsoft/g, "Google")
         </p>
         <p>By default, the replace() method is case sensitive, but this can be overcome using the "/i"
             flag for case insensitive. For example:
         </p>
         <p class="code-block">
-            str = "Please Visit Microsoft!";
+            str = "Please Visit Microsoft!";<br>
             var n = str.replace(/MICROSOFT/i, "Google"); 
         </p>
         <h2>The toUpperCase() Method and toLowerCase() Method</h2>
         <p>To convert a full string to upper case, use the toUpperCase() method. For example:</p>
         <p class="code-block">
-            var text1 = "Hello World!";
+            var text1 = "Hello World!";<br>
             var text2 = text1.toUpperCase();
         </p>
         <p>To convert a full string to lower case, use the toLowerCase() method. For example:</p>
         <p class="code-block">
-            var text1 = "Hello World!";
+            var text1 = "Hello World!";<br>
             var text2 = text1.toLowerCase();
         </p>
     </div>
@@ -222,13 +222,13 @@
         <h1>Joining Strings</h1>
         <p>To join two or more strings, use the concat() method. For exmaple:</p>
         <p class="code-block">
-            var text1 = "Hello";
-            var text2 = "World";
+            var text1 = "Hello";<br>
+            var text2 = "World";<br>
             var text3 = text1.concat(" ", text2); // Returns "Hello World"
         </p>
         <p>The plus operator can also be used in addition to the plus operator. For example:</p>
         <p class="code-block">
-            var text = "Hello" + " " = "World!";
+            var text = "Hello" + " " = "World!";<br>
             var text = "Hello".concat(" ", "World!");
         </p>
         <p>Remember, changing string does not replace the original string. It creates a new one.</p>
@@ -238,7 +238,7 @@
         <h1>Trimming String</h1>
         <p>The trim() method can be used to remove whitespace from either side of a sting. For example:</p>
         <p class="code-block">
-            var str = "     Hello World!     ";
+            var str = "     Hello World!     ";<br>
             alert(str.trim()); // Returns "Hello World!"
         </p>
     </div>
@@ -256,7 +256,7 @@
             the position index starts at zero. For example:
         </p>
         <p class="code-block">
-            var str = "HELLO WORLD";
+            var str = "HELLO WORLD";<br>
             str.charAt(0); // Returns "H"
         </p>
         <h1>The charCodeAt() Method</h1>
@@ -264,7 +264,7 @@
             The method returns a UTF-16 code (integer between 0 and 65535). For example:
         </p>
         <p class="code-block">
-            vat str = "HELLO WORLD";
+            vat str = "HELLO WORLD";<br>
             str.charCodeAt(0); // Returns "72"
         </p>
         <h2>Property Access</h2>
@@ -273,7 +273,7 @@
             returns undefined whilst charAt() returns an emptry string which is more ideal. For example:
         </p>
         <p class="code-block">
-            var str = "HELLO WORLD";
+            var str = "HELLO WORLD";<br>
             str[0]; // Returns "H"
         </p>
     </div>
@@ -282,9 +282,9 @@
         <h1>Converting String to an Array</h1>
         <p>A string can be converted into an array (of data) using the split() method. For example:</p>
         <p class="code-block">
-            var txt = "a,b,c,d,e"; 
-            txt.split(","); // Split on commas
-            txt.split(" "); // Split on spaces
+            var txt = "a,b,c,d,e"; <br>
+            txt.split(","); // Split on commas<br>
+            txt.split(" "); // Split on spaces<br>
             txt.split("|"); // Split on pipe
         </p>
         <p>If the separator specificed is omitted from the results. If the separator is "", then all 

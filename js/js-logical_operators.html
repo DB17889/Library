@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<head>
+    <link href="./js-style.css" rel="stylesheet">
+</head>
+<body>
+
+    <div class="chapter">
+    <h1>Logical Operators Introduction</h1>
+    <p>There are three logical operators in JS:</p>
+    <ol>
+        <li>|| (OR)</li>
+        <li>&& (AND)</li>
+        <li>! (NOT)</li>
+    </ol>
+    <p>Although they are called logical operators, they can be applied to values of any type and not just
+        boolean values.
+    </p>
+    </div>
+
+    <div class="chapter">
+        <h1>|| (OR)</h1>
+        <p>The "OR" operator is represented with: ||</p>
+        <p>Traditionally in programming, logical OR is meant for boolean values only. For example:</p>
+        <p class="code-block">
+            alert(true || true); // true<br>
+            alert(true || false); // true<br>
+            alert(false || true); // true<br>
+            alert(false || false); // false
+        </p>
+        <p>If the operand is NOT a boolean, it is converted to one for evaluation. For example:</p>
+        <p class='code-block'>
+            if (1 || 0) {  <br>
+                alert('true');<br>
+            }<br>
+            // works like if (true or false) alert ('true').
+        </p>
+        <p>As a more relevant example:</p>
+        <p class='code-block'>
+            let hour = 9;<br>
+            <br>
+            if (hour < 10 || hour > 18) {<br>
+                <ind>___</ind>alert('The office is closed');<br>
+            }
+        </p>
+        <p>So essentially, if < 10 is true or hour > 18 is true, then the message is shown.</p>
+        <p>More conditions can be set. For example:</p>
+        <p class='code-block'>
+            let hour = 12;<br>
+            let isWeekend = true;<br>
+            <br>
+            if (hour < 10 // hour > 18 || isWeekend) {<br>
+                <ind>___</ind>alert('The office is closed');<br>
+            }
+        </p>
+        <p>...so if any of those arguments are true, the message is returned.</p>
+
+        CARRY ON FROM "OR finds the first truthy value" in Conditionals, step 1 ' logical operators.'
+
+    </div>
+
+</body>

@@ -27,9 +27,80 @@
 
     <div class="chapter">
         <h1>String Comparisons</h1>
-        <p>CARRY ON FROM FUNDEMENTALS PART 2, CONDITIONALS POINT 1</p>
-
+        <p>JS uses lexicographical order when comparing string to see which is greater than another. Each
+            string is compared letter-by-letter. For example: 
+        </p>
+        <p class="code-block">
+            alert('Z' > 'A'); // true<br>
+            alert('Glow'>'Glee'); //true<br>
+            alers('Bee'>'Be'); // true
+        </p>
+        <p>Lowercase characters are not equal to uppercase characters. Lowercase are greater; this is
+             based on the characgs Unicode covered later. For example:</p>
+        <p clase="code-block">
+            alert('a' > 'A'); // true
+        </p>
     </div>
 
+    <div class="chapter">
+        <h1>Comparison of Different Types</h1>
+        <p>When comparing values of different types, JS conevrs values to numbers. For example:</p>
+        <p class="code-block">
+            alert('2' > 1); // true, as string '2' is converted to number 2.<br>
+            alert('01' == 1); // true, as string '01' is converted to number 1.
+        </p>
+        <p>For boolean values, 'true' is converted to number 1 and 'false' is converted to number 0. 
+            For example:</p>
+        <p class="code-block">
+            alert(true == 1); // true<br>
+            alert(false == 0); // true
+        </p>
+    </div>
+
+    <div class="chapter">
+        <h1>Strict Equality</h1>
+        <p>To check if values are equal, use ==.</p>
+        <p>Note that strict equality has a problem in that it ccannot differentiate 0 from false. For
+            example:
+        </p>
+        <p class="code-block">
+            alert(0 == false); // true<br>
+            // But the same thing happens with an empty string:<br>
+            alert('' == false); // true
+        </p>
+        <p>This happens beacause different types are converted to numbers, and just like 'false' boolean, 
+            an empty string becomes a zero. If we want to differenate 0 from 'false', use the strict equality
+            operator ===. This checks equality, but unlike ==, === does not convert the type. Therefore:
+        </p>
+        <p class='code-block'>
+            alert(0 === false); // false
+        </p>
+        <p>Similarly, non-equality !== does the same for !=.</p>
+    </div>
+
+    <div class="chapter">
+        <h1>Comparison of null and undefined</h1>
+        <p>For a strict equality check ===. these a comparison between null and undefined returns false as
+            they're different types. For a non-strict equality check ==, a comparison between the two returns
+            true.
+        </p>
+        <p>Although both are different types, they are special in that they are not equal to any other 
+            value or type, other than each other. 
+        </p>
+        <p>For mathmatical comparisons, null is converted to 0 and undefined is convered to Nan. For 
+            example:</p>
+        <p class="code-block">
+            alert(null > 0); // false, as null is converted to 0 for mathmatical comparison.<br>
+            alert(null == 0); // false, as null is NOT converted to 0 for equality comparison.<br>
+            alert(null >= 0); // true, as null is converted to 0 for mathmatical comparison.
+        </p>
+        <p>The value undefined should not be compared to other values as it will always be false. For 
+            example:</p>
+        <p class="code-block">
+            alert(undefined > 0); // false, as undefined is converted to NaN for mathmatical comparison.<br>
+            alert(undefined < 0); // false, as undefined is converted to NaN for mathmatical comparison.<br>
+            alert(undefined == 0); // false, as undefined is NOT converted for equality comparison.
+        </p>
+    </div>
 
 </body>

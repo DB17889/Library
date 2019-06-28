@@ -30,7 +30,7 @@
         <p>If the operand is NOT a boolean, it is converted to one for evaluation. For example:</p>
         <p class='code-block'>
             if (1 || 0) {  <br>
-                alert('true');<br>
+                <ind>___</ind>alert('true');<br>
             }<br>
             // works like if (true or false) alert ('true').
         </p>
@@ -53,9 +53,72 @@
             }
         </p>
         <p>...so if any of those arguments are true, the message is returned.</p>
+        
+        <h2>OR Finds The First Truthy Value</h2>
+        <p>Using the following example with multiple OR values:</p>
+        <p class='code-block'>
+            result = value1 || value2 || value3;
+        </p>
+        <p>The OR || operator here is doing the following:</p>
+        <ul>
+            <li>Evaluates from left to right.</li>
+            <li>Converts each operand to boolean. If the result is true, the process
+                stops and returns the original value of that operand. If false, it moves 
+                on to the next operan. 
+            </li>
+            <li>If all operands are evaluated and are boolean false, the last operand is returned.</li>
+        </ul>
+        <p>The value that is returned is the original value, not the boolean counterpart. For example:</p>
+        <p class="code-block">
+            alert(1 || 0); // returns '1' as 1 is truthy<br>
+            alert(true || 'no matter what'); // returns 'true'<br>
+            alert(null || 1); // returns '1' as it is the first truthy value<br>
+            alert(null || 0 || 1); // returns '1' as it is the first truthy value<br> 
+            alert(null || undefined || 0); // returns '0' as all are falsy, and 0 is the last value
+        </p>
+        <p>OR || can be used for a variety of things...</p>
+        <p><b>Getting the first truthy value from a list of variables or expressions.</b></p>
+        <p>As an example, say there are a list of variables that could contain data, be null or be undefined.
+            How do you get the first one with date? Use OR || like this:
+        </p>
+        <p class='code-block'>
+            let currentUser = null;<br>
+            let defaultUser - "Dan";<br>
+            <br>
+            let name = currentUser || defaultUser || "unnamed";<br>
+            <br>
+            alert(name); // returns 'Dan' as defaultUser is the first truthy value.<br>
+        </p>
+        <p>In the example above, if there is no currentUser or defaultUser, then 'unnamed' is returned.</p>
+        <p>Short-circuit evaluation</p>
+        <p>Say for example you only need to assign a valiable if another value is false. As OR || 
+            evaluates from left to right, it stops evaluationg after the first truthy value is found. 
+            For example:
+        </p>
+        <p class='code-block'>
+            let x;<br>
+            <br>
+            true || (x = 1);<br>
+            alert(x); // undefined, as x=1 is not evaluated as true is truthy.<br>
+            <br>
+            null || (x = 1);<br>
+            alert(x); returns 1, as null is bypassed and x=1 is truthy so is evaluated and run. 
+        </p>  
+        <p>...in general though, it's safer to use a regular 'if', covered later.</p>  
+    </div>
 
-        CARRY ON FROM "OR finds the first truthy value" in Conditionals, step 1 ' logical operators.'
-
+    <div class="chapter">
+        <h1>&& (AND)</h1>
+        <p>The "AND" operator is represented with: &&</p>
+        <p>Traditionally in programming, logical AND is meant for boolean values only. If both operands are
+            truthy, true is returned. Otherwise, false is returned. For example:</p>
+        <p class="code-block">
+            alert(true && true); // true<br>
+            alert(true && false); // false<br>
+            alert(false && true); // false<br>
+            alert(false && false); // false
+        </p>
+    
     </div>
 
 </body>

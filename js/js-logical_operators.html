@@ -64,7 +64,7 @@
             <li>Evaluates from left to right.</li>
             <li>Converts each operand to boolean. If the result is true, the process
                 stops and returns the original value of that operand. If false, it moves 
-                on to the next operan. 
+                on to the next operand. 
             </li>
             <li>If all operands are evaluated and are boolean false, the last operand is returned.</li>
         </ul>
@@ -90,7 +90,7 @@
             alert(name); // returns 'Dan' as defaultUser is the first truthy value.<br>
         </p>
         <p>In the example above, if there is no currentUser or defaultUser, then 'unnamed' is returned.</p>
-        <p>Short-circuit evaluation</p>
+        <p><b>Short-circuit evaluation</b></p>
         <p>Say for example you only need to assign a valiable if another value is false. As OR || 
             evaluates from left to right, it stops evaluationg after the first truthy value is found. 
             For example:
@@ -118,7 +118,74 @@
             alert(false && true); // false<br>
             alert(false && false); // false
         </p>
-    
+        <p>As an example with 'if':</p>
+        <p class='code-block'>
+            let hour = 12;<br>
+            let minute = 30;<br>
+            <br>
+            if (hour == 12 && minute == 30) {<br>
+                <ind>___</ind>alert('The time is 12:30');<br>
+            }
+        </p>
+        <p>As with OR, any value is allowed as an AND operand:</p>
+        <p class='code-block'>
+            if (1 && 0) {<br>
+            <ind>___</ind>alert("wont work as result is falsy");<br>
+            }
+        </p>
+
+        <h2>AND Finds The First Falsy Value</h2>
+        <p>Where OR || finds the truthy value, AND && finds the first falsy value</p>
+        <p>Using the following example with multiple AND values:</p>
+        <p class='code-block'>
+            result = value1 && value2 && value3;
+        </p>
+        <p>The AND && operator here is doing the following:</p>
+        <ul>
+            <li>Evaluates from left to right.</li>
+            <li>Converts each operand to boolean. If the result is false, the process
+                stops and returns the original value of that operand. If true, it moves 
+                on to the next operand. 
+            </li>
+            <li>If all operands are evaluated and are boolean true, the last operand is returned.</li>
+        </ul>
+        <p>For example:</p>
+        <p class='code-block'>
+            alert(1 && 0); // returns 0<br>
+            alert(1 && 5); // returns 5<br>
+            alert(null && 5); // returns null<br>
+            alert(0 && 'no matter what'); // returns 0<br>
+            <br>
+            alert(1 && 2 && null && 3); returns null<br>
+            alert(1 && 2 && 3); returns 3
+        </p>
+        <p>THe precendence of AND and OR is that AND is greather than OR, so && is greater than ||. For 
+            example:
+        </p>
+        <p class='code-block'>
+            a && b || c && d // && takes precendence over ||, so its essentially:<br>
+            (a && b) || (c && d);
+        </p>
+    </div>
+
+    <div class='chapter'>
+        <h1>! (NOT)</h1>
+        <p>The boolean NOT operator is represented with !. For example:</p>
+        <p class='code-block'>
+            result = !value;
+        </p>
+        <p>The operator accepts a single argument and:</p>
+        <ul>
+            <li>Converts the operand to boolean true/false.</li>
+            <li>Returns the inverse value.</li>
+        </ul>
+        <p>For example:</p>
+        <p class='code-block'>
+            alert(!true); // returns false<br>
+            alert(!0); // returns true
+        </p>
+        <p>A double NOT !! canbe used to conver a value to boolean type.</p>
+        <p>The precedence of NOT has priority over AND and OR, so the order of precedence is: !, &&, ||</p>
     </div>
 
 </body>

@@ -3,9 +3,24 @@
     <link href="./js-style.css" rel="stylesheet">
 </head>
 <body>
+<a class="page-link" href="../index.html">HOME</a><br><br>
 
     <div class="chapter">
-        <h1>The if Statement</h1>
+        <h1>Introduction To Conditionals</h1>
+        <p>The following conditional statements are available in js:</p>
+        <ul>
+            <li>if</li>
+            <li>if...else</li>
+            <li>if...else if</li>
+            <li>switch</li>
+        </ul>
+        <p>This section covers the first three above. See 
+            <a class="page-link" href="./js-switch_statement.html">here</a> for switch statements.
+        </p>
+    </div>
+
+    <div class="chapter">
+        <h1>Introduction To The 'if' Statement</h1>
         <p>Syntax example:</p>
         <p class='code-block'>
             if (condition) {<br>
@@ -13,13 +28,10 @@
             }
         </p>
 
-        CARRY ON WITH FUNDAMENTALS 2, CONDITIONALS STEP 3!!!!!!!!!!!!!!!!!!!!!!!
-
-
     </div>
 
     <div class="chapter">
-        <h1>The else Statement</h1>
+        <h1>Introduction To The 'if else' Statement</h1>
         <p>Syntax example:</p>
         <p class='code-block'>
             if (condition) {<br>
@@ -28,10 +40,42 @@
                 <ind>___</ind>// block of code to be executed if the condition is false<br>
             }
         </p>
+        <p>In summary, the following is happening here:</p>
+        <ul>
+            <li>The 'if' keyword is declared, followed by some parethesis.</li>
+            <li>A condition to test is then placed within the parenthesis. Thiw will use comparison operators
+                and will return either true or false.
+            </li>
+            <li>A set of curly braces is next with code which is exectured only if the result of the condition
+                is true.
+            </li>
+            <li>The 'else' keyword is then shown. 
+            </li>
+            <li>Finally, another set of curly breaces with code which is executed only if the contidion
+                is false.
+            </li>
+        </ul>
+        <p>Note the if else statements can be writen in a shorter way, but this is not recommended as 
+            it makes code less readable. This includes excluding 'else' or curly brackets. For example, the
+            following are perfectly legal, but harder to read:
+        </p>
+        <p class='code-block'>
+            if (condition) code to run if condition is true<br>
+            else code to run if condition is false
+        </p>
+        <p class="code-block">
+            if (condition) {<br>
+                <ind>___</ind>code to run if condition is true<br>
+            }<br>
+        </p>
+        <a href="https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Building_blocks/conditionals">
+        Here</a> is an example of a simple if else statement in action.
+
+
     </div>
 
     <div class="chapter">
-        <h1>The else if Statement</h1>
+        <h1>Introduction To The 'else if' Statement</h1>
         <p class='code-block'>
             if (condition1) {<br>
                 <ind>___</ind>// block of code to be executed if condition1 is true.<br>
@@ -40,6 +84,160 @@
             } else {<br>
                 <ind>___</ind>// block of code to be executed if both conditions are false.
             }
+        </p>
+
+        <h2>A Working Example</h2>
+        <label for="weather">Select the weather type today:</label>        
+        <select id="weather">
+            <option value="">--Make a choice--</option>
+            <option value="sunny">Sunny</option>
+            <option value="rainy">Rainy</option>
+            <option value="snowing">Snowing</option>
+            <option value="overcast">Overcast</option>
+        </select>
+
+
+        <p class='weatherResult'></p>
+
+                <!--The code below is not visible within the output and is for the working example-->
+
+        <script id="weatherExample">
+            var select = document.querySelector('select');
+            var para = document.querySelector('.weatherResult');
+
+            select.addEventListener('change', setWeather);
+
+            function setWeather() {
+                var choice = select.value;
+
+                if (choice === 'sunny') {
+                    para.textContent = "It is nice and sunny today, remember sun cream!";
+                } else if (choice === 'rainy') {
+                    para.textContent = "It is raining, remember your umbrella!";
+                } else if (choice === 'snowing') {
+                    para.textContent = 'It is snowing today, remember your gloves!';
+                } else if (choice === 'overcast') {
+                    para.textContent = 'What a miserable day!';
+                } else {
+                    para.textContent = '';
+                }
+            }
+        </script>
+
+                <!--This marks the end of the code for the working example.-->
+        
+        <p>To see the JS for this working example, see the 'weatherExample' class within this html.</p>
+        <p>In summary, the following is happening here:</p>
+        <ul>
+            <li>We have a HTML select element, with several options to choose from, and an empty paragraph
+                at the end with class '.weatherResult'.
+            </li>
+            <li>In the JS, we reference the select element and the 'weatherResult' paragraph. An event 
+                listener is added to the select element which, when changed, gets the setWeather() function
+                to run. 
+            </li>
+            <li>When this function is run, first a variable is set called choice, which picks up and stores
+                the value assigned to the select statement when a change is recognised.
+            </li>
+            <li>A conditional statement is then run using if and else if for each of the choices. At the end
+                there is a blank text after else as a 'last resort' if the choices are not selected. Users 
+                would see this if the 'make a choice' was selected. 
+            </li>
+        </ul>
+
+        <h2>Nesting</h2>
+        <p>It is perfectly fine to next if else statements within if else statements. When nested, each
+            if else statement is run independently. Back to the weather example, say the temparature was
+            also defined, you could tie this in as below:
+        </p>
+        <p class='code-block'>
+            if (choice === 'sunny') {<br>
+                <ind>___</ind>if (temperature < 25) {<br>
+                    <ind>______</ind>para.textContent = 'It is ' + temparature + 'outside. Nice and sunny!'<br>
+                <ind>___</ind>} else if (temperature >= 25) {<br>
+                    <ind>______</ind>para.textContent = 'If is ' + temperature + 'ourside. VERY HOT!!!'<br>
+                <ind>___</ind>}<br>
+            }
+        </p>
+    </div>
+
+    <div class="chapter">
+        <h1>Testing Boolean - A Point To Remember</h1>
+        <p>A thing to remember when testing boolean (true/false) values, which comes up a lot, is that 
+            any value which is not 'false', or is not 'undefined', 'null', '0', 'NaN' or '', actually
+            returns true. So just a standard string alone, is 'true'. For example:
+        </p>
+        <p class="code-block">
+            var cheese = 'Cheddar';<br>
+            <br>
+            if (cheese) {<br>
+                <ind>___</ind>console.log('Yes, it is cheese!');<br>
+            } else {<br>
+                <ind>___</ind>console.log('Nope, not cheese');<br>
+            }<br>
+        </p>
+        <p>... so 'Cheddar' returns 'Cheddar' which is true.</p>
+        <p>As another example:</p>
+        <p class="code-block">
+            var shoppingDone = false;<br>
+            <br>
+            if (shoppingDone) {<br>
+            <ind>___</ind>var childsAllowance = 5;<br>
+            } else {<br>
+            <ind>___</ind>var childsAllowance = 0;<br>
+            }
+        </p>
+    </div>
+
+    <div class='chapter'>
+        <h1>Conditionals & Logical Operators</h1>
+        <p>You can use logical operators to test multiple conditions without needing to nest if else
+            statements. When used in conditions:
+        </p>
+        <ul>
+            <li>&& (AND) - Allows two or more expressions to be chained together so that all must be true
+                for the entire expression to return true.
+            </li>
+            <li>|| (OR) - Allows two or more expressions to be chained together so so that one or more 
+                have to be true in order for the entire expression to return true.
+            </li>
+        </ul>
+        <p>For example, following on from the nesting example covered earlier, using AND && can prevent
+            the need for nesting:
+        </p>
+        <p class='code-block'>
+            if (choice === 'sunny' && temparature < 25) {<br>
+            <ind>___</ind>para.textContent = 'It is ' + temperature + 'outside. Nice and sunny!';<br>
+            } else if {<br>
+            <ind>___</ind>para.textContent = 'It is ' + temperature + 'outside. VERY HOT!!!';<br>
+            }
+        </p>
+        <p>As an example using OR ||, where at lease one expression must be true:</p>
+        <p class='code-block'>
+            if (iceCreamVanOutside || houseStatus = 'on fire') {<br>
+            <ind>___</ind>console.log('Leave the house quickly!');<br>
+            } else {<br>
+            <ind>___</ind>console.log('No need to go outside...');<br>
+            }
+        </p>
+        <p>The NOT logical operator can also be used to negate and expression. Combined with the OR 
+            expression above:
+        </p>
+        <p class='code-block'>
+            if (!(iceCreamVanOutside || houseStatus = 'on fire')) {<br>
+            <ind>___</ind>console.log('No need to go outside...');<br>
+            } else {<br>
+            <ind>___</ind>console.log('Leave the house quickly!');<br>
+            }
+        </p>
+        <p>In the statement above, OR returns 'true', however NOT negates this and changes the overall
+            express result to 'false'.
+        </p>
+        <p>When using logical operators, remember to write each expression independantly. For example:</p>
+        <p class='code-block'>
+            if (x === 5 || 10 || 15) // Will always be true, as '10' and '15' are always true.<br>
+            <br>
+            if (x === 5 || if x = 10 || if = 15) // Will only be true if x equals 5, 10 or 15.
         </p>
     </div>
 

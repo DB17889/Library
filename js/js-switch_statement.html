@@ -7,9 +7,99 @@
  
     <div class="chapter">
         <h1>Introduction To The 'switch' Statement</h1>
-        <p>The following conditional statements are available in JS:</p>
-        
+        <p>The if...else statements are good for enabling conditional code, but are usually only good for 
+            a small number of choices, or where conditions are complex (e.g. with multiple logical operators).
+            For cases where a selected choices just needs to print out a statement depending on the condition, 
+            the syntax can be a little 'over the top'.
+        </p>
+        <p>This is where 'switch' statements comes in useful. They take a simple expression (or value) as an
+            input, and look though a list of choices before one is found. The relevant code then gets 
+            executed. As an example, here is the basic syntax:
+        </p>
+        <p class='code-block'>
+            switch (expression) {<br>
+            <ind>___</ind>case choice1:<br>
+            <ind>______</ind>run this code<br>
+            <ind>______</ind>break;<br>
+            <br>
+            <ind>___</ind>case choice2:<br>
+            <ind>______</ind>run this code instead<br>
+            <ind>______</ind>break;<br>
+            <br>
+            <ind>___</ind>// and so on, for as many choices as required.<br>
+            <br>
+            <ind>___</ind>default:<br>
+            <ind>______</ind>actually, just run this code<br>
+            }
+        </p>
+        <p>In summary, the syntax is this:</p>
+        <ul>
+            <li>The 'switch' keyword followed by parenthesis.</li>
+            <li>The epxression or value is contained within the paranthesis.</li>
+            <li>The 'case' keyword followed by a choice that the expression/value could be, followed
+                by a colon.
+            </li>
+            <li>Code that should run if the choice matches the expression is then shown.</li>
+            <li>Next, a 'break' statement followed by a semi colon. If the choice matches the expression/value,
+                then the browser stops executing the code block here.
+            </li>
+            <li>Further choices for evaluation until the break statement is hit.</li>
+            <li>the 'default' keyword is included, followed by code which should run if none of the 
+                choices match.
+            </li>
+        </ul>
 
+        <h2>Working Example</h2>
+        <label for="weather">Select the weather type today:</label>
+        <select id="weather">
+            <option value="">--Make a Choice--</option>
+            <option value="sunny">Sunny</option>
+            <option value="rainy">Rainy</option>
+            <option value="snowing">Snowing</option>
+            <option value="overcast">Overcast</option>
+        </select>
+        
+        <p class="weatherResult"></p>
+
+        <!-- The following is not shown within the html output but is code for working example -->
+
+        <script class="weatherExample">
+            var select = document.querySelector('select');
+            var para = document.querySelector(".weatherResult");
+
+            select.addEventListener('change', setWeather);
+
+            function setWeather() {
+                var choice = select.value;
+
+                switch (choice) {
+                    case 'sunny':
+                        para.textContent = 'It is sunny, remember your suncream!';
+                        break;
+                    case 'rainy':
+                        para.textContent = 'It is raining, remember your umbrella!';
+                        break;
+                    case 'snowing': 
+                        para.textContent = 'It is snowing, remember your hat and gloves!';
+                        break;
+                    case 'overcast': 
+                        para.textContent = 'It is miserable today!';
+                        break;
+                    default: 
+                        para.textContent = '';
+                }
+            }
+        </script>
+
+        <!-- This is the end of the js code for the working example -->
 
     </div>
+
+    <div class='chapter'>
+        <h1>Examples</h1>
+        <p>There are a few exercises <a href='https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Building_blocks/conditionals'>
+            here</a> that are worth a look at doing!
+        </p>
+    </div>
+
 </body>

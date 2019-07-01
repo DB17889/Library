@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+    <body>
+
+    <!-- THIS IS THE HTML ASKING FOR INPUT -->
+
+        <label>What is your name?</label>
+        <form>
+            <input type="text" name="fullname" class="nameInput">
+        </form>
+        <br> 
+
+        <label>How old are you?</label>
+        <br>
+        <form>
+            <input type="text" name="age" class="age">
+        </form>
+        <br>
+
+        <label>What is your gender?</label>
+        <br>
+        <select class='gender'>
+            <option value="">Select your gender...</option>
+            <option value='male'>Male</option>
+            <option value='female'>Female</option>
+        </select>
+        <br>
+        <br>
+
+    <!-- THIS IS THE HTML OUTPUT -->
+
+        <p class='genderResult'></p>
+        <p class='ageResult'></p>
+        <p class='nameResult'></p>
+
+    <!-- THIS IS THE JAVASCRIPT -->
+
+        <script>
+
+        // NAME EVALUATION
+
+            var fullName = document.querySelector(".nameInput");
+            var nameOutcome = document.querySelector(".nameResult");
+
+            fullName.addEventListener("change", setName);
+
+            function setName() {
+
+                var nameSelection = fullName.value;
+
+                if (nameSelection) {
+                    nameOutcome.textContent = fullName.value;
+                } else {
+                    nameOutcome.textContent = "";
+                }
+            }
+
+        // GENDER EVALUATION
+
+            var gen = document.querySelector(".gender");
+            var genOutcome = document.querySelector(".genderResult");
+
+            gen.addEventListener("change", setGender);
+
+            function setGender() {
+                
+                var genSelection = gen.value;
+
+                if (genSelection === 'male') {
+                    genOutcome.textContent = "You are a male.";
+                } else if (genSelection === 'female') {
+                    genOutcome.textContent = "You are a female.";
+                } else {
+                    genOutcome.textContent = "";
+                }
+            }
+        
+        // AGE EVALUATION
+
+            var age = document.querySelector(".age");
+            var ageOutcome = document.querySelector(".ageResult");
+
+            age.addEventListener("change", setAge);
+
+            function setAge() {
+                
+                var ageSelection = age.value;
+
+                if (ageSelection <= 12) {
+                    ageOutcome.textContent = "You are a child.";
+                } else if (ageSelection < 21) {
+                    ageOutcome.textContent = "You are an adolescent.";
+                } else if (ageSelection < 65) {
+                    ageOutcome.textContent = "You are an adult.";
+                } else if (ageSelection >= 65) {
+                    ageOutcome.textContent = "You are a pensioner";
+                } else {
+                    ageOutcome.textContent = "";
+                }
+            }
+
+        </script>
+
+</body>
+</html>

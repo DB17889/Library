@@ -93,6 +93,71 @@
 
         <!-- This is the end of the js code for the working example -->
 
+        <h2>Working Example 2</h2>
+        <p>Here, we'll send a message to the console on each day of the week.</p>
+
+        <!-- The following is not shown within the html output but is code for working example 2 -->
+
+        <script class="dayExample">
+            
+                const day = new Date().getDay();
+
+                switch (day) {
+                    case 1:
+                        console.log("It's Monday!");
+                        break;
+                    case 2:
+                        console.log("It's Tuesday!");
+                        break;
+                    case 3: 
+                        console.log("It's Wednesday!");
+                        break;
+                    case 4: 
+                        console.log("It's Thursday!");
+                        break;
+                    case 5: 
+                        console.log("It's Friday!");
+                        break;
+                    case 6: 
+                        console.log("It's Saturday!");
+                        break;
+                    case 7: 
+                        console.log("It's Sunday!");
+                        break;
+                    default:
+                        console.log("Something went wrong...");
+                }
+
+        </script>
+    </div>
+
+    <div class='chapter'>
+        <h1>Switch Ranges</h1>
+        <p>You can use a switch statement with a  case expression just for true, to return a range result. 
+            See the working example.
+        </p>
+        <script class="rangeExample">
+        
+            const grade = 87;
+
+            switch (true) {
+                case grade >= 90:
+                    console.log("A");
+                    break;
+                case grade >= 80: 
+                    console.log("B");
+                    break;
+                case grade >= 70:
+                    console.log("C");
+                    break;
+                case grade >= 60: 
+                    console.log("D");
+                    break;
+                default: 
+                    console.log("Fail");
+            }
+
+        </script>
     </div>
 
     <div class='chapter'>

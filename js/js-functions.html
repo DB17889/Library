@@ -7,7 +7,123 @@
  
     <div class="chapter">
         <h1>Introduction To Functions</h1>
+        <p>Functions allow code to be stored  within a defined block, which when called runs a simple task
+            using a single short command. This saves typing the same code over and over. 
+        </p>
+        <p>Pretty much every time JS structure uses a pair of parathesis, excluding built-in language structure
+            such as if...else, you're making use of a function. 
+        </p>
+    </div>
 
+    <div class="chapter">
+        <h1>Built-In Browser Functions</h1>
+        <p>Some example in-build browser funcitons include:</p>
+        <p class="code-block">
+            let myTest = 'I am a string';<br>
+            let new String = myTest.replace('string', 'sausage');<br>
+            console.log(newString);<br>
+        </p>
+        <p>Here, the replace() function takes a string and replaces it with another.</p>
+        <p class="code-block">
+            let myArray = ["I", "love", "chocolate"];<br>
+            let madeAString = myArray.join(' ');<br>
+            console.log(madeAString);
+        </p>
+        <p>Here, the join() function takes an array and joins together the array items, returning a 
+            new string. 
+        </p>
+        <p class="code-block">
+            let myNumber = Math.random();
+        </p>
+        <p>Here, the random() function generates a random number between 0 and 1 and returns it.</p>
+        <p>Technically speaking, a browser function isn't a function, it's a 'method'. This is because 
+            methods are functions defined inside objects; build-in browser functions (i.e. 'Methods') and 
+            variables (i.e. 'Properties') are stored inside structred objects to make code more efficient.</p>
+    </div>
+
+    <div class="chapter">
+        <h1>Custom Functions</h1>
+        <p>A function has parathesis following the function name, and is invoked to run the code within.
+            As an example:
+        </p>
+        <p class="code-block">
+            function myFunction() {<br>
+                <ind>___</ind>alert('hello');<br>
+            }
+        </p>
+        <p>This creates the function called myFunction. To invoke this function:</p>
+        <p class="code-block">
+            myFunction()
+        </p>
+        <p>You can also create a function with no name, known as an 'anonymous function'. For example:</p>
+        <p class="code-block">
+            function() {<br>
+                <ind>___</ind>alert('hello');<br>
+            }
+        </p>
+        <p>On it's own, this would do nothing. Generally, you would use an anonymous function in 
+            conjunction with an event handler. For example, ths following would run when the associated
+            button is pressed:
+        </p>
+        <p class='code-block'>
+            var myButton = document.querySelector('button');<br>
+            <br>
+            myButton.onclick = function() {<br>
+                <ind>___</ind>alert('hello');<br>
+            }
+        </p>
+        <p>...where 'button' references a html < button > element.</p>
+        <p>An anonymous function can also be assigned as the value of a variable, for example:</p>
+        <p class='code-block'>
+            var myGreeting = function() {<br>
+                <ind>___</ind>alert('hello');<br>
+            }
+        </p>
+        <p>This is invoked in the same way as if it were named:</p>
+        <p class='code-block'>
+            myGreeting();
+        </p>
+        <p>...and you can also assigned the function to be the value of other variables, like this:</p>
+        <p class='code-block'>
+            let anotherGreeting = myGreeting;
+        </p>
+        <p>...meaining that it can be invoked using either of:</p>
+        <p class='code-block'>
+            myGreeting();<br>
+            anotherGreeting();
+        </p>
+        <p>...but it's not good practise to do that in general, as it is confusing. In most cases, an 
+            anonymous function is used to run code in response to an event firing using an event handler,
+            like a button being clicked.
+        </p>
+    </div>
+
+    <div class='chapter'>
+        <h1>Function Parameters</h1>
+        <p>Some functions require parameters specifying when the function is invoked. These parameters are
+            added within the function parenthesis. For example, the replace function (method) covered ealier
+            requires two parameters; the existing substring and new substring. For example:
+        </p>
+        <p class="code-block">
+            let myText = 'I am a string';<br>
+            let newText = myText.replace('string', 'sausage');
+        </p>
+        <p>Some function parameters are optional as a default value is applicable. For example, 
+            the join method covered earlier - if left blank, the join will use a comma by default. However, 
+            you can specify what delimiting character to use in the parathesis. For example, to set a space
+            between values rather than the default comma:
+         </p>
+         <p class='code-block'>
+             let myArray = ['I','love','chocolate'];<br>
+             let madeString = myArray.join(' ') // returns 'I love chocolate'<br>
+             let madeString = myArray.join() // returns I,love,chocolate
+         </p>
+    </div>
+
+    <div class='chapter'>
+        <h1>Function Scope & Conflicts</h1>
+        <p>FUNDAMENTALS 3, step 1, 50% down</p>
+        
     </div>
 
 </body>

@@ -122,8 +122,72 @@
 
     <div class='chapter'>
         <h1>Function Scope & Conflicts</h1>
-        <p>FUNDAMENTALS 3, step 1, 50% down</p>
-        
+        <p>Scope - an essential concept when dealing with functions.</p>
+        <p>When a function is created, the variables and other things defined within the function are
+            inside their own <b>scope</b>. This means that they are compartmentalised in their own little block
+            of code, and they're unreachable from code outside of that function.
+        </p>
+        <p>The top level of code, outside of all functions, is known as the <b>global scope</b>. This code
+            is accessible from anywhere else in the code.</p>
+        <p>Keeping code locked away inside a function, not accessible from elsewhere, is primarily for 
+            security and to avoid problems. For example, if you have a named variable that is not locked 
+            away inside a function, and a third party linked to the page also as the same variable name, 
+            we have a clash.
+        </p>
     </div>
+
+    <div class="chapter">
+        <h1>Function Return Values</h1>
+        <p>Return values are just that; values returned by a function when it completes. Some functions 
+            return a value, such as the replace() method which returns a new variable with replaced substring.
+            Others functions do not return a value
+        </p>
+        <p>A working example:</p>
+        <input class="numberInput" type="text">
+        <p class="numberOutput"></p>
+        
+        <!-- The JS below is for the working example -->
+
+        <script>
+            var input = document.querySelector('.numberInput');
+            var parag = document.querySelector('numberOutput');
+
+            function squared(num) {
+                return num * num;
+            }
+
+            function cubed(num) {
+                return num * num * num;
+            }
+
+            function factorial(num) {
+                var x = num;
+                while (x > 1) {
+                    num *= x-1;
+                    x--;
+                }
+                return num;
+            }
+
+            input.onchange = function() {
+                var num = input.value;
+                if (isNaN(num)) {
+                    parag.textContent = 'You need to enter a number!';
+                } else {
+                    parag.textContent =  num + ' squared is ' + squared(num) + '. ' +
+                                         num + ' cubed is ' + cubed(num) + '. ' +
+                                         num + ' factorial is ' + factorial(num) + '.';
+                }
+            }
+        </script>
+    </div>
+
+    <div class="chapter">
+        <h1>Sources</h1>
+        <p>For more on functions see: http://javascript.info/function-basics</p>
+    </div>
+
+
+    NEXT UP: FUNDAMENTALS 3, STEP 4
 
 </body>

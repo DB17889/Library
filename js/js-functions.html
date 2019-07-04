@@ -187,7 +187,134 @@
         <p>For more on functions see: http://javascript.info/function-basics</p>
     </div>
 
+    <div class='chapter'>
+        <h1>Function Expressions</h1>
+        <p>The functions covered previously are knwon as <i>Function Declarations</i>, where the
+            syntax  is:</p>
+        <p class='code-block'>
+            function sayHi() {<br>
+                <ind>___</ind>alert("Hello");<br>
+            }
+        </p>
+        <p>Another syntax option for functions is a <i>Function Expression</i>:</p>
+        <p class='code-block'>
+            let sayHi = function() {<br>
+                <ind>___</ind>alert("Hello");<br>
+            };
+        </p>
+        <p>Here, and function is created and assigned to the variable 'sayHi'. Note that a function expression
+            has a semi-colon at the end of it. This is because the syntax is a variable, so is essentially 
+            'let sayHi = ...;'. A function declaration does not necessarily need a semi-colon at the end as this
+            is just a code block, but there is no harm in doing so. 
+        </p>
+        <p>It is also possible to copy a function to a variable. For example:</p>
+        <p class='code-block'>
+            function sayHi() {<br>  
+                <ind>___</ind>alert("Hello");<br>
+            }<br>
+            <br>
+            let func = sayHi;<br>
+            <br>
+            func(); // returns 'Hello'<br>
+            sayHi(); // returns 'Hello'
+        </p>
+        <p>Here, several things are happening:</p>
+        <ol>
+            <li>First, the function declaration is created.</li>
+            <li>Next, the function is copied to the variable func. Note that:</li>
+                <ul>
+                    <li>There are no parenthesis after sayHi. This means that the function is assigned 
+                        to the variable, and not the result of the function. 
+                    </li>
+                    <li>If the parenthesis was there and it said sayHi(), then the result of the function 
+                        would be assigned to variable func.
+                    </li>
+                </ul>
+            <li>The function can either be called using the original function, sayHi(), or the new 
+                variable func().</li>
+        </ol>
+    </div>
 
-    NEXT UP: FUNDAMENTALS 3, STEP 4
+    <div class='chapter'>
+        <h1>Callback Functions</h1>
+        <p>callback functions are a way of calling back later if necessary.</p>
+        <p>See the working example.</p>
+
+                <!-- The code below is for the working example -->
+        
+        <script>
+
+            // The below is an example callback function using a 'long' function declaration.
+
+            function ask(question, yes, no) {
+                if (confirm(question)) yes()
+                else no();
+            }
+
+            function showOK() {             // Becomes the answer for yes in the ask function.
+                alert("You agreed");
+            }
+
+            function showCancel() {         // Becomes the answer for no in the ask function.
+                alert("You canceled the exectution");
+            }
+
+            ask("Do you agree?", showOK, showCancel);   // Defines the ask function parameters.
+
+            // The below does the same, but is a shorter way to do using a function expression.
+
+            function ask(question, yes, no) {
+                if (confirm(question)) yes()
+                else no();
+            }
+
+            ask(
+                "Do you agree?",
+                function() {alert("You agreed.");},
+                function() {alert("you canceled the execution");}
+            );
+        </script>
+    </div>
+
+    <div class="chapter">
+        <h1>Arrow Functions</h1>
+        <p>Arrow functions do the same as function expressions, but a little simpler.</p>
+        <p>An arrow function looks like this:</p>
+        <p class='code-block'>
+            let func = (arg1, arg2, ...argN) => expression
+        </p>
+        <p>... where a function with arguments is created, an expression is evaluated, and a result is
+            returned. It's similar to the function expression below, but a little more concise: 
+        </p>
+        <p class='code-block'>
+            let func = function(arg1, arg2, ...argN) {<br>
+                <ind>___</ind>return expression;<br>
+            };
+        </p>
+        <p>As an example arror function:</p>
+        <p class='code-block'>
+            let sum = (a, b) => a + b; <br>
+            <br>
+            alert(sum(1,2)); // returns '3'
+        </p>
+        <p>FYI, the longer function expression that does the same would be:</p>
+        <p class='code-block'>
+            let sum = function(a,b) {<br>
+                <ind>___</ind>reutrn a + b;<br>
+            };
+        </p>
+        <p>If there is only one argument, then no parenthesis are needed. For example:</p>
+        <p class='code-block'>
+            let double = n => n * 2;<br>
+            <br>
+            alert(double(3)); // returns '6'
+        </p>
+        <p>Or if there is no argument, then just empty parenthesis are required, like this:</p>
+        <p class='code-block'>
+            let sayHi = () => alert("Hello!");<br>
+            <br>
+            sayHi(); // returns "Hello!"
+        </p>
+    </div>
 
 </body>

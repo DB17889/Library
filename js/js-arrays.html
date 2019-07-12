@@ -63,8 +63,54 @@
         <h1>Array Properties & Methods</h1>
         <p>Arrays have a variety of properties and methods which can act on array elements.</p>
         <h2>The length Property</h2>
+        <p>The lenght propery of an array returns the length of the array, i.e. how many elements 
+            it contains. For example:
+        </p>
+        <p class='code-block'>
+            var fruits = ["Banana", "Orange", "Apple", "Mango"];<br>
+            fruits.length; // Returns 4.
+        </p>
+        <p>A useful thing to remember is that the lenght of an array is always one higher than the 
+            index ID of the final array element. You can use this to capture the last array element. 
+            For example:
+        </p>
+        <p class='code-block'>
+            var first = fruits[0]; // Returns the first element, Banana. <br>
+            var fruit = fruits[fruits.length - 1]; // Returns the last element, Mango.  
+        </p>
+    </div>
+
+    <div class="chapter">
+        <h1>Looping Array Elements</h1>
+        <p>TO COVER LATER AFTER DOINGS LOOPS?</p>
+        <p>From: https://www.w3schools.com/js/js_arrays.asp</p>
+    </div>
+
+    <div class='chapter'>
+        <h1>Adding Array Elements</h1>
+        <p>To add a new element to the end of an array, use the push() method. For example:</p>
+        <p class="code-block">
+            fruits.push("Lemon"); // Adds "Lemon" as the last element.
+        </p>
+        <p>Additionally, a new element can be added to the end using the length property. 
+            For example:</p>
+        <p class='code-block'>
+            fruits[fruits.length] = "Lemon"; // Adds "Lemon" as the last element.
+        </p>
+        <p>Or directly with an index number:</p>
+        <p class='code-block'>
+            fruits[6] = "Lemon"; // Adds "Lemon" as the 6th element.
+        </p>
+        <p>...although this should be used with caution, as it could result in undefined 'holes' in 
+            the array.
+        </p>        
+    </div>
+
+    <div class='chapter'>
+        <h1>Associative Arrays</h1>
         
 
     </div>
+
 
 </body>

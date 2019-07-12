@@ -9,6 +9,61 @@
     <div class="chapter">
         <h1>Introduction to Arrays</h1>
         <p>An array is a variable which can hold more than one value at a time.</p>
+        <p>The syntax of an array is: <i>array_name = [item1, item2, item3, ...];</i>. For example:</p>
+        <p class='code-block'>
+            var cars = ["Saab", "Volvo", "BMW"];
+        </p>
+        <p>The keyword 'new' can also be used to create an array and assign values. For example:</p>
+        <p class="code-block">
+            var cars = new Array("Saab", "Volvo", "BMW");
+        </p>
+        <p>They both do the same, so stick to the first where possible.</p>
+    </div>
+
+    <div class="chapter">
+        <h1>Array Elements</h1>
+        <h2>Accessing Array Elements</h2>
+        <p>You can access the full array of data using just the array name. </p>
+        <p>You can also access a specific array element using the index number. Remember, in JS zero is 
+            the first number. For example:
+        </p> 
+        <p class='code-block'>
+            var name = cars[0]; // Accesses Saab, the first element in the cars array.
+        </p>
+        
+        <h2>Changing Array Elements</h2>
+        <p>You can also use the array index to update an array element. For example:</p>
+        <p class="code-block">
+            cars[0] = "Ford"; // Updates the first element from Saab to Ford.
+        </p>
+    </div>
+
+    <div class='chapter'>
+        <h1>Arrays Are Objects</h1>
+        <p>Arrays are special types of objects. The typeof operator in JS returns "object" for arrays.
+            However, it's best to refer to arrays as arrays, rather than objects, as:
+        </p>
+        <ul>
+            <li>Arrays use index number to access it's "elements", as below.</li>
+            <li>Objects use names to access it's "members", as below.</li>
+        </ul>
+        <p class='code-block'>
+            var person = ["Dan", "B"]; // An Array.<br>
+            person[0]; // Returns "Dan".<br>
+            <br>
+            var person = {firstName:"Dan", lastName:"B"}; // An Object.<br>
+            person.firstName // Returns "Dan".
+        </p>
+        <p>Remember that array elements don't just have to be string or numbers; they can also
+            be objects too. For example, an array element could be a function. 
+        </p>
+    </div>
+
+    <div class="chapter">
+        <h1>Array Properties & Methods</h1>
+        <p>Arrays have a variety of properties and methods which can act on array elements.</p>
+        <h2>The length Property</h2>
+        
 
     </div>
 

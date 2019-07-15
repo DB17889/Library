@@ -17,7 +17,7 @@
         <p class="code-block">
             var cars = new Array("Saab", "Volvo", "BMW");
         </p>
-        <p>They both do the same, so stick to the first where possible.</p>
+        <p>They both do the same, so stick to the first where possible as the second is outdated.</p>
     </div>
 
     <div class="chapter">
@@ -107,9 +107,45 @@
     </div>
 
     <div class='chapter'>
-        <h1>Associative Arrays</h1>
-        
+        <h1>Arrays & Objects</h1>
+        <h2>Associative Arrays</h2>
+        <p>Many programming languages support associative arrays; where associative arrays are those
+            with named indexs. However, JS does not support arrays with named indexes. JS always uses
+            numbered index. Note that associative arrays are also called hashes.
+        </p>
+        <p>Naming an index turns the array into an object, which then changes the behaviour of
+            the 'array'.
+        </p>
+        <h2>The Difference Between Arrays & Objects</h2>
+        <p>In JavaScript:</p>
+        <ul>
+            <li>Arrays used numbered indexes;</li>
+            <li>Objects used numbered indexes.</li>
+        </ul>
+        <p>...where an array is just a special type of object.</p>
+        <p>So, use objects when element names should be string; user arrays when the element names
+            can be numbers.
+        </p>
+    </div>
 
+    <div class="chapter">
+        <h1>Identifying Arrays</h1>
+        <p>In JS, you can't just use the typeof operator to see if something is an array, as an 
+            array is technically an object. For example:
+        </p>
+        <p class='code-block'>
+            var fruits = ["Banana", "Orange", "Apple", "Mango"]; <br>
+            <br>
+            typeof fruits; // returns object
+        </p>
+        <p>You can use a new method Array.isArray(). For example:</p>
+        <p class='code-block'>
+            Array.isArray(fruits); // returns true
+        </p>
+        <p>Or you can yse the instanceof operator, for example:</p>
+        <p class='code-block'>
+            fruits instanceof Array; // returns true
+        </p>
     </div>
 
 

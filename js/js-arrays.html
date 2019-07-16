@@ -30,7 +30,25 @@
         <p class='code-block'>
             var name = cars[0]; // Accesses Saab, the first element in the cars array.
         </p>
-        
+
+        <h2>Adding Array Elements</h2>
+        <p>To add a new element to the end of an array, use the push() method. For example:</p>
+        <p class="code-block">
+            fruits.push("Lemon"); // Adds "Lemon" as the last element.
+        </p>
+        <p>Additionally, a new element can be added to the end using the length property. 
+            For example:</p>
+        <p class='code-block'>
+            fruits[fruits.length] = "Lemon"; // Adds "Lemon" as the last element.
+        </p>
+        <p>Or directly with an index number:</p>
+        <p class='code-block'>
+            fruits[6] = "Lemon"; // Adds "Lemon" as the 6th element.
+        </p>
+        <p>...although this should be used with caution, as it could result in undefined 'holes' in 
+            the array.
+        </p>   
+
         <h2>Changing Array Elements</h2>
         <p>You can also use the array index to update an array element. For example:</p>
         <p class="code-block">
@@ -39,7 +57,8 @@
     </div>
 
     <div class='chapter'>
-        <h1>Arrays Are Objects</h1>
+        <h1>Arrays & Objects</h1>
+        <h2>Arrays Are Objects</h2>
         <p>Arrays are special types of objects. The typeof operator in JS returns "object" for arrays.
             However, it's best to refer to arrays as arrays, rather than objects, as:
         </p>
@@ -57,11 +76,33 @@
         <p>Remember that array elements don't just have to be string or numbers; they can also
             be objects too. For example, an array element could be a function. 
         </p>
+
+        <h2>Associative Arrays</h2>
+        <p>Many programming languages support associative arrays; where associative arrays are those
+            with named indexs. However, JS does not support arrays with named indexes. JS always uses
+            numbered index. Note that associative arrays are also called hashes.
+        </p>
+        <p>Naming an index turns the array into an object, which then changes the behaviour of
+            the 'array'.
+        </p>
+
+        <h2>The Difference Between Arrays & Objects</h2>
+        <p>In JavaScript:</p>
+        <ul>
+            <li>Arrays used numbered indexes;</li>
+            <li>Objects used numbered indexes.</li>
+        </ul>
+        <p>...where an array is just a special type of object.</p>
+        <p>So, use objects when element names should be string; user arrays when the element names
+            can be numbers.
+        </p>
+
     </div>
 
     <div class="chapter">
         <h1>Array Properties & Methods</h1>
         <p>Arrays have a variety of properties and methods which can act on array elements.</p>
+
         <h2>The length Property</h2>
         <p>The lenght propery of an array returns the length of the array, i.e. how many elements 
             it contains. For example:
@@ -78,54 +119,151 @@
             var first = fruits[0]; // Returns the first element, Banana. <br>
             var fruit = fruits[fruits.length - 1]; // Returns the last element, Mango.  
         </p>
-    </div>
 
-    <div class="chapter">
-        <h1>Looping Array Elements</h1>
-        <p>TO COVER LATER AFTER DOINGS LOOPS?</p>
-        <p>From: https://www.w3schools.com/js/js_arrays.asp</p>
-    </div>
-
-    <div class='chapter'>
-        <h1>Adding Array Elements</h1>
-        <p>To add a new element to the end of an array, use the push() method. For example:</p>
-        <p class="code-block">
-            fruits.push("Lemon"); // Adds "Lemon" as the last element.
-        </p>
-        <p>Additionally, a new element can be added to the end using the length property. 
-            For example:</p>
+        <h2>The toString() & join() Methods</h2>
+        <p>The toString() method converts an array to a string of comma separated values. For example:</p>
         <p class='code-block'>
-            fruits[fruits.length] = "Lemon"; // Adds "Lemon" as the last element.
+            var fruits = ["Banana", "Orange", "Apple", "Mango"];<br>
+            fruits.toString(); // Returns "Banana,Orange,Apple,Mango"
         </p>
-        <p>Or directly with an index number:</p>
+        <p>Note that instinctively, in JS "fruits" will also return comma separated string in the same
+            way that "fruits.toString()" does.
+        </p>
+        <p>The join() method also converts to string, but unlike toString(), you can specify the 
+            separator when using join(). For example:
+        </p>
         <p class='code-block'>
-            fruits[6] = "Lemon"; // Adds "Lemon" as the 6th element.
+            fruits.join(" * "); // Returns "Banana * Orange * Apple * Mango"
         </p>
-        <p>...although this should be used with caution, as it could result in undefined 'holes' in 
-            the array.
-        </p>        
-    </div>
 
-    <div class='chapter'>
-        <h1>Arrays & Objects</h1>
-        <h2>Associative Arrays</h2>
-        <p>Many programming languages support associative arrays; where associative arrays are those
-            with named indexs. However, JS does not support arrays with named indexes. JS always uses
-            numbered index. Note that associative arrays are also called hashes.
+        <h2>The pop() & push() Methods</h2>
+        <p>Popping and pushing is the addition and removing of elements. You pop items OUT of an 
+            array, and push items INTO an array.
         </p>
-        <p>Naming an index turns the array into an object, which then changes the behaviour of
-            the 'array'.
+        <p>The pop() methods removes the last element from an array. For example:</p>
+        <p class='code-block'>
+            var fruits = ["Banana", "Orange", "Apple", "Mango"];<br>
+            fruits.pop(); // Removes the last element "Mango".
         </p>
-        <h2>The Difference Between Arrays & Objects</h2>
-        <p>In JavaScript:</p>
-        <ul>
-            <li>Arrays used numbered indexes;</li>
-            <li>Objects used numbered indexes.</li>
-        </ul>
-        <p>...where an array is just a special type of object.</p>
-        <p>So, use objects when element names should be string; user arrays when the element names
-            can be numbers.
+        <p>The pop() method returns the value that was popped out, so can be assigned to a variable.
+            For example:
         </p>
+        <p class='code-block'>
+            var x = fruits.pop(); // Assigns "Mango" to x.
+        </p>
+        <p>The push() method adds a new element to the end of an array. For example:</p>
+        <p class='code-block'>
+            fruits.push("Kiwi"); // Adds new element "Kiwi" to the end of the array.
+        </p>
+        <p>The push() method returns the new length of the array when the new element is added. This new
+            length can be assigned to a variable. For example:
+        </p>
+        <p class='code-block'>
+            var x = fruits.push(); // Assigns 5 to x; the new array length. 
+        </p>
+
+        <h2>Shifting Elements</h2>
+        <p>Shifting is the same as popping, but this time working on the first element instead of the
+            last element. The shift() method removes the first element in the array, and 'shifts' all 
+            other elements to a lower index. For example:
+        </p>
+        <p class='code-block'>
+            var fruits = ["Banana", "Orange", "Apple", "Mango"];<br>            
+            fruits.shift(); // Removes the first element "Banana" from the list and shits others down.
+        </p>
+        <p>The shift() method returns the element shifted out, so this can be assigned to a variable. 
+            For example:
+        </p>
+        <p class='code-block'>
+            var x = fruits.shift(); // Assigns "Banana" to x.
+        </p>
+        <p>Unshifting is the same as pushing, but this time adding the new element as the first element
+            rather than the last. The unshift() method adds the new element as the first index, and 
+            shifts the existing elements to a higher index.
+        </p>
+        <p class='code-block'>
+            fruits.unshift("Lemon"); // Adds "Lemon" as the first element and shifts others up.
+        </p>
+        <p>The unshift() method returns the new length of the array when the new element is added. This
+            new length can be assigned to a variable. For example:
+        </p>
+        <p class='code-block'>
+            var x = fruits.unshift("Lemon"); // Assigns 5 to x; the new array length. 
+        </p>
+
+        <h2>Merging (Concatenating) Arrays</h2>
+        <p>The concat() method creates a new array by merging existing arrays. For example:</p>
+        <p class='code-block'>
+            var myGirls = ["Amy", "Katie"]; <br>
+            var myBoys = ["Ashley", "Liam"]; <br>
+            var myChildren = myGirls.concat(myBoys); // Joins myBoys to myGirls.
+        </p>
+        <p>The concat() method doesn't change the existing arrays; it creates a new one.</p>
+        <p>The concat() method can take multiple arguments. For example:</p>
+        <p class='code-block'>
+            var array1 = ["A", "B", "C"];<br>
+            var array2 = ["D", "E"];<br>
+            var array3 = ["F", "G"];<br>
+            var newArray = array1.concat(array1, array2);
+        </p>
+        <p>The concat() method can also take values as arguments. For example:</p>
+        <p class='code-block'>
+            var array1 = ["A", "B", "C"];<br>
+            var newArray = array1.concat(["D", "E", "F", "G"]);
+        </p>
+
+        <h2>Splicing An Array</h2>
+        <p>Splicing an array is allows new elements to be added into any position within an array. The
+            splice() method has a few parameters to define. For example:
+        </p>
+        <p class='code-block'>
+           var fruits = ["Banana", "Orange", "Apple", "Mango"]; <br>
+           fruits.spluce(2, 0, "Lemon", "Kiwi"); 
+        </p>
+        <p>In the example above, the first parameter "2" defines the index position where the new
+            elements should be added. The second parameter "0" defines how many existing elements 
+            should be removed. The rest of the parameters defined the new elements to be added.
+        </p>
+        <p>The splice() method can be used to remove elements from any point within an array using 
+            the paramters. For example:
+        </p>
+        <p class='code-block'>
+            fruits.splice(1,2); // At index position 1, 2 elements are removed.
+        </p>
+        <p>...this prevents the array from having undefined holes. Those removals could be replaced
+            too. For example:
+        </p>
+        <p class='code-block'>
+            var fruits = ["Banana", "Orange", "Apple", "Mango"]; <br>
+            fruits.splice(1,2,"Lemon","Kiwi") // Array becomes "Banana", "Lemon", "Kiwi", "Mango"
+        </p>
+        <p>Note that splice returns the deleted elements; these can be assigned to a variable.</p>
+
+        <h2>Slicing An Array</h2>
+        <p>Slicing an array takes a piece out of an array and puts it into a new array using 
+            the slice() method. For example:
+        </p>
+        <p class='code-block'>
+            var fruits = ["Banana", "Orange", "Apple", "Mango"]; <br>
+            var newFruits = fruits.slice(3); // slices out index 3 ("Apple") onwards and assigns to 
+                new array.
+        </p>
+        <p>Typically, slice will take two arguments, saying the starting index up to (but not 
+            including) the end argument. For example:
+        </p>
+        <p class='code-block'>
+            var fruits = ["Banana", "Orange", "Apple", "Mango"]; <br>
+            var citrus = fruits.slice(1,3)
+        </p>
+        <p>...this takes index 1 "Orange" to index 2 "Lemon", as the second argument is 'up to but 
+            not including. [Remember, in JS indexes start at zero.]
+        </p>
+        <p>When slicing an array, the original array remains unchanged. The new array contains the
+            sliced elements.
+        </p>
+
+    </div>
+     
     </div>
 
     <div class="chapter">
@@ -148,5 +286,24 @@
         </p>
     </div>
 
+    <div class='chapter'>
+        <h1>Deleting Elements</h1>
+        <p>Elements can be deleted from an array using the delete operator. For example:</p>
+        <p class='code-block'>
+            var fruits = ["Banana", "Orange", "Apple", "Mango"]; <br>
+            delete fruits[0]; // Changes the first element from "Banana" to undefined.
+        </p>
+        <p>...although it's best to avoid using this as it leaves 'holes' in the array. Use pop() or 
+            shift() instead, using splice() if required. 
+        </p>
+    </div>
+
+    <div class="chapter">
+        <h1>Looping Array Elements</h1>
+        <p>TO COVER LATER AFTER DOINGS LOOPS?</p>
+        <p>From: https://www.w3schools.com/js/js_arrays.asp</p>
+    </div>
+    
+    
 
 </body>

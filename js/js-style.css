@@ -1,17 +1,38 @@
-.code-block {
-    border: solid red 2px;
-    margin: 0.5em;
-    padding: 1em;
-    width: 700px;
-    background-color: #f7f69a;
-    font-family: 'Courier New';
-    font-size: 14px;
+body {
+    background-color: aqua;
+}
+
+.page-header {
+    background-color: white;
+    border-bottom: solid;
+    padding: 10px 0 10px 10px;
+    margin: -10px;   
+}
+
+.page-container {
+    background-color: white;
+    width: 50%;
+    position: absolute;
+    left: 25%;
+    border: solid;
+    margin-top: 10px;
 }
 
 .chapter {
-    border: solid black 1px;
-    padding: 0 10px 10px 10px;
+    border-bottom: solid;
+    padding: 0 10px 25px 10px;
     margin-bottom: 5px;
+}
+
+.code-block {
+    border: solid red 2px;
+    padding: 1em;
+    position: relative;
+    width: 80%;
+    left: 8%;
+    background-color: #f7f69a;
+    font-family: 'Courier New';
+    font-size: 14px;
 }
 
 ind {

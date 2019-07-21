@@ -68,14 +68,10 @@ ind {
     color: black;
 }
 
-.object {
-    color: rgb(8, 155, 253);
-}
-
-.element {
-    color: rgb(143, 32, 32);
-}
-
-.comment {
-    color: rgb(2, 80, 2);
+.library-list {
+    text-align: left;
+    padding: 30px 20px 30px 20px;
+    font-size: 20px;
+    line-height: 1.5em;
+    font-weight: 900;
 }

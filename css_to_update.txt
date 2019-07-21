@@ -1,0 +1,7 @@
+ALL INDEX
+ALL HTML
+ALL GIT
+ALL CSS
+ALL JS except: 
+    Arrays
+    Functions TBC

@@ -4,13 +4,127 @@
 </head>
 <body>
 
- <a class="page-link" href="../index.html">HOME</a><br><br>
- 
-    <div class="chapter">
-        <h1>Introduction to Loops</h1>
-        
+    <div class="page-header">
+        <a class="page-link" href="../index.html">Library Index</a>
+        <a class="page-link" href="./js-index.html">JS Index</a>
     </div>
     
+    <div class='page-container'>
+
+        <div class="page-title">
+            <p>Loops</p>
+        </div>
+ 
+        <div class="chapter">
+            <h1>Introduction to Loops</h1>
+            <p>Loops are to do with doing the same thing over and over.</p>
+            <p>A loop has some/all of the following features:</p>
+            <ol>
+                <li><b>Counter:</b> The starting value of the loop.</li>
+                <li><b>Exit Condition:</b> The criteria at which the loop stops, usually when the counter 
+                    reaches a certain value.
+                </li>
+                <li><b>Interator:</b> The step which increments the counters on each loop as it's run, until
+                    the exit condition is reached.
+                </li>
+            </ol>
+            <p>As an example:</p>
+            <p class='code-block'>
+                loop(foodCounter = 0; foodNeeded = 10) {<br>
+                <ind>___</ind>if (foodCounter >= foodNeeded) {<br>
+                <ind>______</ind>exit loop;<br>
+                <ind>___</ind>} else {<br>
+                <ind>______</ind>foodCounter += 2;<br>
+                <ind>___</ind>}<br>
+                }
+            </p>
+            <p>Note that the += operator assigns and adds the value of the variable on the right to
+                the existing value on the left. So above, assign and add 2 to the existing foodCounter
+                value.
+            </p>
+        </div>
+
+        <div class="chapter">
+            <h1>The "for" Loop</h1>
+            <p>Typically, loops are created using the for keyword. The syntax is as follows:</p>
+            <p class='code-block'>
+                for (intialiser; exit-condition; final-expression){<br>
+                <ind>___</ind> // code to run<br>
+                }
+            </p>
+            <p>Where we have:</p>
+            <ul>
+                <li>The keyword <b>for</b> followed by parenthesis which contains three items:</li>
+                    <ol>
+                        <li><b>Initialiser: </b>Typically a variable set with a starting value for 
+                          the loops; also known as the <b>counter</b>.</li>
+                        <li><b>Exit Condition: </b>Defines when the loop should stop looping. Typically 
+                          an expression with a comparison operator.</li>
+                        <li><b>Final Expression: </b>Defines the expression to run each time the loop
+                          has gone through an interation, typically incementing or decrementing the 
+                          initialiser counter value, heading towards the exit condition value.</li>
+                    </ol>
+                <li>Curly braces which contains a block of code. This is the block of code which
+                    runs during each loop iteration. 
+                </li>
+            </ul>
+            <p>For example:</p>
+            <p class='code-block'>
+                const cats = ['Bill', 'Jeff', 'Pete', 'Biggles', 'Jasmin'];<br>
+                let info = 'My cats are called: ';<br>
+                const para = document.querySelector('p');<br>
+                <br>
+                for (let i = 0; i &lt cats.length; i++) {<br>
+                <ind>___</ind>info += cats[i] + ', ';<br>
+                }<br>
+                <br>
+                para.textContent = info;
+            </p>
+            <p>So breaking this down:</p>
+            <ol>
+                <li>The counter variable 'i' starts off at 0.</li>
+                <li>The loop runs until the value of 'i' is no longer less than the length of the
+                    'cats' array. Remember, the final array element has index ID 4; the length of 
+                    the array is 5, so when the 'i' = 5 there is no index in the array, so no need 
+                    to run and the loop can exit.
+                </li>
+                <li>Inside the loop, the code that runs concatenates the current array element from 
+                    'cats[i]' with a comma then a space, onto the end of the 'info' variable. So:
+                </li>
+                    <ul>
+                        <li>When first run, 'i' = 0, so [cats[0] + ', '] is concatenates onto the 
+                            end of the 'info' variable. In this case, "Bill, " is added to 'info'. 
+                            The final expression 'i++' increments the value of 'i' for the next run.                       
+                        </li>
+                        <li>Next run, 'i' = 1, so [cats[1] + ', '] is concatenates onto the end of the 
+                            'info' variable, so "Jeff, " joins Bill.
+                        </li>
+                    </ul>
+                <li>The loop continues until 'i' is no longer smaller than 'cats.length'.</li>
+            </ol>
+            <p>Within the html, this would return "My cats are called: Bill, Jeff, Pete, Biggles,
+                Jasmin, "
+            </p>
+            <p>The above example just needs tidying up a little for in the 'real world', so that
+                the list ends nicely. You can do this using a conditional within the loop like this:
+            </p>
+            <p class='code-block'>
+                for (let i = 0; i  &lt cats.length; i++) {<br>
+                <ind>___</ind>if (i === cats.length - 1) {<br>
+                <ind>______</ind>info += 'and ' + cats[i] + '.';<br>
+                <ind>___</ind>} else {<br>
+                <ind>______</ind>info += cates[i] + ', '<br>
+                <ind>___</ind>}<br>
+                }
+            </p>
+            <p>Instead, this returns "My cats are called: Bill, Jeff, Pete, Biggles and Jasmin."</p>
+        </div>
+
+        <div class='chapter'>
+            <h1>Exiting Loops With 'break'</h1>
+        </div>
     
+    
+    </div>
 
 </body>

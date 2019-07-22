@@ -122,6 +122,83 @@
 
         <div class='chapter'>
             <h1>Exiting Loops With 'break'</h1>
+            <p>If you need to exit a loop before all iterations are completed, you can use the 'break' 
+                statement. Similar to how the 'break' statement is used with switch, 'break' also exits 
+                the loop immediately.
+            </p>
+            <p>As an example, say you wanted to search an array of contact numbers and just return the 
+                one required:
+            </p>
+            <p class='code-block'>
+                // First the html<br>
+                <br>
+                &ltlabel for="search">Search by contact name: &lt/label><br>
+                &ltinput id="search" type="text">
+                &ltbutton>Search&lt/button>
+                <br>
+                &ltp class='contactOutput'>&lt/p>
+                <br>
+                // Next the JavaScript:
+                const contacts = ['Chris:2232322', 'Sarah:3453456', 'Bill:7654322', 'Mary:9998769'
+                  'Dianne:9384975'];<br>
+                const para = document.querySelector('.contactOutput');<br>
+                const input = document.querySelector('input');<br>
+                const btn = document.querySelector('button');<br>
+                <br>
+                btn.addEventListener('click', function(){<br>
+                    let searchName = input.value.toLowerCase();<br>
+                    input.value = '';<br>
+                    input.focus();<br>
+                    for (let i = 0; i &lt contacts.length; i++) {<br>
+                        let splitContact = contacts[i].split(':');<br>
+                        if (splitContact[0].toLowerCase() === searchName) {<br>
+                            para.textContent = splitContact[0] + '\'s number is ' + splitContact[1] + '.';<br>
+                            break;<br>
+                        } else {<br>
+                            para.textContent = 'Contact not found.';<br>
+                        }<br>
+                    }<br>
+                });
+            </p>
+
+            <!-- And in action... -->
+
+                <label for="search">Search by contact name: </label><br>
+                <input id="search" type="text">
+                <button>Search</button>
+                <br>
+                <p class='contactOutput'></p>
+
+                    
+                <script>
+                    const contacts = ['Chris:2232322', 'Sarah:3453456', 'Bill:7654322', 'Mary:9998769', 'Dianne:9384975'];
+                    const para = document.querySelector('.contactOutput');
+                    const input = document.querySelector('input');
+                    const btn = document.querySelector('button');
+                    
+                    btn.addEventListener('click', function(){
+                        let searchName = input.value.toLowerCase();
+                        input.value = '';
+                        input.focus();
+                        for (let i = 0; i < contacts.length; i++) {
+                            let splitContact = contacts[i].split(':');
+                            if (splitContact[0].toLowerCase() === searchName) {
+                                para.textContent = splitContact[0] + '\'s number is ' + splitContact[1] + '.';
+                                break;
+                            } else {
+                                para.textContent = 'Contact not found.'
+                            }
+                        }
+                    });
+                </script>
+
+            <!-- End -->
+
+        <p>Here, the following is happening:</p>
+        <ol>
+            <li></li>
+        </ol>
+        
         </div>
     
     

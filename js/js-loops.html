@@ -146,18 +146,18 @@
                 const btn = document.querySelector('button');<br>
                 <br>
                 btn.addEventListener('click', function(){<br>
-                    let searchName = input.value.toLowerCase();<br>
-                    input.value = '';<br>
-                    input.focus();<br>
-                    for (let i = 0; i &lt contacts.length; i++) {<br>
-                        let splitContact = contacts[i].split(':');<br>
-                        if (splitContact[0].toLowerCase() === searchName) {<br>
-                            para.textContent = splitContact[0] + '\'s number is ' + splitContact[1] + '.';<br>
-                            break;<br>
-                        } else {<br>
-                            para.textContent = 'Contact not found.';<br>
-                        }<br>
-                    }<br>
+                <ind>___</ind>let searchName = input.value.toLowerCase();<br>
+                <ind>___</ind>input.value = '';<br>
+                <ind>___</ind>input.focus();<br>
+                <ind>___</ind>for (let i = 0; i &lt contacts.length; i++) {<br>
+                <ind>______</ind>let splitContact = contacts[i].split(':');<br>
+                <ind>______</ind>if (splitContact[0].toLowerCase() === searchName) {<br>
+                <ind>______</ind>para.textContent = splitContact[0] + '\'s number is ' + splitContact[1] + '.';<br>
+                <ind>______</ind>break;<br>
+                <ind>______</ind>} else {<br>
+                <ind>______</ind>para.textContent = 'Contact not found.';<br>
+                <ind>______</ind>}<br>
+                <ind>___</ind>}<br>
                 });
             </p>
 
@@ -196,10 +196,40 @@
 
         <p>Here, the following is happening:</p>
         <ol>
-            <li></li>
+            <li>First, we're assigning some variables. An array of contacts, and some links to the 
+                html document.
+            </li>
+            <li>Next, an event listener is added to the button element, so when the button is clicked it
+                kicks off the function shown.
+            </li>
+            <li>Within the function, the first step is to store the input string against variable 
+                searchName, as lowercase. 
+            </li>
+            <li>The next two steps are tidying up the input, where:</li>
+            <ul>
+                <li>The input value entered by the user is removed and replaced with ''.</li>
+                <li>The input field is focused on; i.e. the curser goes to the input field.</li>
+            </ul>
+            <li>After that, the loop is introduced, where:</li>
+            <ul>
+                <li>The counter starts at 0; the loops runs until the counter is no longer less than the 
+                    length of the contacts array; the value of i increments by 1 after each loop.
+                </li>
+                <li>Inside the loop, the current contact, that is the one with index 'i' using 
+                    contacts[i] is split at the colon, creating new array splitContact.
+                </li>
+                <li>A conditional statement then checks whether the lowercase of splitContact[0] 
+                    is equal to the input searchName. If it is equal, the string shown is assigned to 
+                    the paragraph and 'break' ends the loop.
+                </li>
+            </ul>
+            <li>After (contacts.length - 1) iterations, if the contact name does not match the 
+                paragragh shows that the contact is not found.
+            </li>
         </ol>
-        
         </div>
+
+        <div class='chapter'>Skipping Iterations With continue</div>
     
     
     </div>

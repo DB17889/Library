@@ -229,7 +229,99 @@
         </ol>
         </div>
 
-        <div class='chapter'>Skipping Iterations With continue</div>
+        <div class='chapter'>
+        <h1>Skipping Iterations With continue</h1>
+            <p>The 'continue' statement works similarly to the 'break' statement covered previously,
+                but instead of breaking out of the loop, 'continue' skips to the next iteration of 
+                the loop. 
+            </p>
+            <p class='code-block'>
+                // The html is the same as the break statement example within input and para output.<br>
+                <br>
+                let num = input.value;<br>
+                <br>
+                for (let i = 1; 1 &lt= num; i++) {<br>
+                <ind>___</ind>let sqRoot = Math.sqrt(i);<br>
+                <ind>___</ind>if (Math.floor(sqRoot) !== sqRoot) {<br>
+                <ind>______</ind>continue;<br>
+                <ind>___</ind>}<br>
+                <ind>___</ind>para.textContent += i + ' ';<br>
+                }
+            </p>
+            <p>Here the following is happening:</p>
+            <ol>
+                <li>The input is a number 'num'. The 'for' loop then starts at 1, as this is the counter
+                    given. The exit condition says that the loop will stop when the counter becomes bigger
+                    than the input 'num'. The iterator adds 1 to the counter each time
+                </li>
+                <li>Inside the loop, Math.sqrt(i) finds the square root of i and checks whether it 
+                    is an integer by testing whether it is the same as itself when it has been rounded to
+                    the nearest integer using Math.floor().
+                </li> 
+                <li>If sqRoot and Math.floor(sqRoot) do not equal each other (!==), then we use the 
+                    continue statement to just move on to the next iteration without recording the value
+                    anywhere. 
+                </li>
+                <li>If (Math.floor(sqRoot) !== sqRoot) is false, meaning that they DO match each other, 
+                    then the continue statement is bypassed, and the value of i is output against the html 
+                    paragraph element with a space concatenated onto the end for the next potential 
+                    result.
+                </li>
+            </ol>
+        </div>
+
+        <div class='chapter'>
+            <h1>The 'while' Loop</h1>
+            <p>'for' is not the only type of loop available in JS; there are many others too. As an
+                example of another, we have the 'while' loop, where the syntax looks like this:
+            </p>
+            <p class='code-block'>
+                initialiser<br>
+                while (exit-condition) {<br>
+                <ind>___</ind>// code to run<br>
+                <br>
+                <ind>___</ind>final-expression<br>
+                }
+            </p>
+            <p>This works similar to 'for' loops, but instead the initialiser variable is set before 
+                the loop and the final-expression is included within the loop after the code to run. 
+                So they're not included inside parenthesis unlike 'for'. The exit-condition is included 
+                inside the parenthesis preceeded by 'while'.
+            </p>
+            <p>Using the cats example again:</p>
+            <p class='code-block'>
+                let i = 0;<br>
+                <br>
+                while (i &lt catslength) {<br>
+                <ind>___</ind>if (i === cats.length - 1) {<br>
+                <ind>______</ind>info += 'and ' + cats[i] + '.';<br>
+                <ind>___</ind>} else {<br>
+                <ind>______</ind>info += cats[i] = ' ,';<br>
+                }<br>
+                <br>
+                i++;<br>
+                }
+            </p>
+        </div>
+
+        <div class='chapter'>
+            <h1>The 'do ... while' Loop</h1>
+            <p>The 'do ... while' loops is very similar, but provides a variation on the while 
+                structure. The syntax is: 
+            </p>
+            <p class='code-block'>
+                initialiser<br>
+                do {<br>
+                <ind>___</ind>// code to run<br>
+                <br>
+                <ind>___</ind>final-expression<br>
+                } while (exit-condition)
+            </p>
+            
+
+            CARRY ON FROM: In this case, the initializer again comes first, before the loop starts. The keyword directly precedes the curly braces containing the code to run and the final expression.
+
+        </div>
     
     
     </div>

@@ -317,10 +317,34 @@
                 <ind>___</ind>final-expression<br>
                 } while (exit-condition)
             </p>
-            
+            <p>Here, the initialiser comes first before the loop starts again. The 'do' keyword preceeds the 
+                curly braces which contains the code to run, and the final-expression. However, the difference
+                here is that the exit-condition is outside of the loop, in parenthesis at the end following the
+                'while' keyword. Unlike 'for' and 'while' loops, the 'do...while' loop runs the code before the 
+                check is made to see if it should execute the code again. 'for' and 'while' check the exit-condition
+                before running the code. 
+            </p>
+            <p>Using the cats example again:</p>
+            <p class='code-block'>
+                    let i = 0;<br>
+                    <br>
+                    do {<br>
+                    <ind>___</ind>if (i === cats.length - 1) {<br>
+                    <ind>______</ind>info += 'and ' + cats[i] + '.';<br>
+                    <ind>___</ind>} else {<br>
+                    <ind>______</ind>info += cats[i] = ' ,';<br>
+                    <ind>___</ind>}<br>
+                    <br>
+                    <ind>___</ind>i++;<br>
+                    } while (i &lt cats.length);
+            </p>
+        </div>
 
-            CARRY ON FROM: In this case, the initializer again comes first, before the loop starts. The keyword directly precedes the curly braces containing the code to run and the final expression.
-
+        <div class='chapter'>
+            <h1>Which Type Of Loop Should Be Used?</h1>
+            <p>In general, 'for', 'while' and 'do...while' are quite interchangeable, so any can be used in 
+                most cases, although 'for' is the recommended one as the three parameters sit nicely alongside
+                each other within one set of parenthesis.</p>
         </div>
     
     

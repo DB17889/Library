@@ -35,6 +35,106 @@
 
         <div class="chapter">
             <h1>Targetting Nodes With Selectors</h1>
+            <p>When working with the DOM, 'selectors' are used to target nodes that need to be worked 
+                with. Starting with CSS-style selectors, the following  could be used to refer to the 
+                &ltdiv class='display'&gt&lt/div&gt example:
+            </p>
+            <ul>
+                <li>div.display</li>
+                <li>.display</li>
+                <li>#container > .display</li>
+                <li>div#container > div.display</li>
+            </ul>
+            <p>You can also use relational selectors, identifying a certain node based on its
+                relationship to the nodes around it. For example:
+            </p>
+            <p class='code-block'>
+                const container = document.querySelector('#container');<br>
+                // select the #container div<br>
+                <br>
+                console.dir(container.firstElementChild);<br>
+                // select the first child of #container. So .display<br>
+                <br>
+                const controls = document.querySelector('.controls');<br>
+                // select the .controls div<br>
+                <br>
+                console.dir(controls.previousElementSibling);<br>
+                // select the prior sibling. So .display<br>
+            </p>
+        </div>
+
+        <div class='chapter'>
+            <h1>DOM Methods</h1>
+            <p>When HTML code is parsed ny a web browser, it is converted into the DOM as covered. 
+                The nodes are objects, which have properties and methods attached to them. It's these
+                properties and methods which are used to manipulate a webpage with JavaScript.
+            </p>
+            <h2>Query Selectors</h2>
+            <p>In short, here are the key query selectors. There are others, but the main ones are:</p>
+            <ul>
+                <li><b>element.querySelector(selector)</b>: returns reference to the <i>first</i> 
+                match of the selector.</li>
+                <li><b>element.querySelectorAll(selectors)</b>: returns a 'nodelist' containing 
+                references to all of the matches of the selectors.</li>
+            </ul>
+            <p>Note that when using querySelectorAll, the return value is not an array. The list is 
+                a 'nodelist'. It can be converted to an array if needed though, using Array.from().
+            </p>
+            <h2>Element Creation</h2>
+            <p>The <b>document.createElement(tagName[, options])</b> creates a new element of tag
+                type 'tagName'. Options will be covered later. For example:
+            </p>
+            <p class='code-block'>
+                const div = document.createElement('div');
+            </p>
+            <p>This function doesn't put a new element into the DOM; it just creates it in the memory.
+                You can place / remove elements into the DOM as below. 
+            </p>
+            <h3>Append Elements</h3>
+            <ul>
+                <li><b>parentNode.appendChild(childNode)</b>: Appends 'childNode' as the last 
+                child of 'parentNote'.</li>
+                <li><b>parentNode.insertBefore(newNode, referenceNode)</b>: Inserts 'newNode' into
+                'parentNode' before 'referenceNode'.</li>
+            </ul>
+            <h3>Remove Elements</h3>
+            <ul>
+                <li><b>parentNote.removeChild(child)</b>: Removes 'child' from 'parentNote' on the 
+                DOM and returns reference to 'child'.</li>
+            </ul>
+        </div>
+
+        <div class='chapter'>
+            <h1>Altering Elements</h1>
+            <p>When reference an element, you can use that reference to alter the elements own 
+                properties. This allows alterations such as adding/removing/adjusting attributes, 
+                adding inline styles, altering attributes, and more. For example:
+            </p>
+            <p class='code-block'>
+                // Reference an element<br>
+                // =====================<br>
+                const div = document.createElement('div');<br>
+                <br>
+                // Add inline style<br>
+                // =================<br>
+                div.style.color = 'blue';<br>
+                // adds the style rule shown<br>
+                <br>
+                div.style.cssText = 'color: blue; background: white';<br>
+                // adds several style rules<br>
+                <br>
+                div.setAttribute('style', 'color: blue; background: white');<br>
+                // adds several style rules
+            </p>
+            <p><a href='http://domenlightenment.com/#6.2'>Here</a> is a good reference for inline 
+                CSS properties. In general, style tules are the same as in CSS, except for hyphenated
+                CSS rules, as these are changed to camelCase in JaveScript. (e.g. background-color 
+                becomes backgroundColor.</p>
+        </div>
+
+        <div class='chapter'>
+            <h1>Editing Attributes</h1>
+            
 
         </div>
 

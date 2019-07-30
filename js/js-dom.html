@@ -110,6 +110,8 @@
                 properties. This allows alterations such as adding/removing/adjusting attributes, 
                 adding inline styles, altering attributes, and more. For example:
             </p>
+
+            <h2>Editing Styles</h2>
             <p class='code-block'>
                 // Reference an element<br>
                 // =====================<br>
@@ -130,11 +132,28 @@
                 CSS properties. In general, style tules are the same as in CSS, except for hyphenated
                 CSS rules, as these are changed to camelCase in JaveScript. (e.g. background-color 
                 becomes backgroundColor.</p>
-        </div>
+        
+            <h2>Editing Attributes</h2>
+            <p class='code-block'>
+                // Reference an element<br>
+                // =====================<br>
+                const div = document.createElement('div');<br>
+                <br>
+                // Edit the attribute<br>
+                // ===================<br>
+                div.setAttribute('id', 'theDiv');<br>
+                // if id exists, update it to 'theDiv', else create an id with value 'theDiv'<br>
+                <br>
+                div.getAttribute('id');<br>
+                // returns value of the specified attribute, in this case 'theDiv'<br>
+                <br>
+                div.removeAttribute('id');<br>
+                // removes the specified attribute
+            </p>
+            <p><a href='https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes'>Here</a> are 
+                more details on html attributes.</p>
 
-        <div class='chapter'>
-            <h1>Editing Attributes</h1>
-            
+            <h2>Working With Classes</h2>
 
         </div>
 

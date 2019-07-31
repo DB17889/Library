@@ -1,6 +1,48 @@
 <!DOCTYPE html>
 <html>
     <body>
-        
+        <h1>
+            THE TITLE OF YOUR WEBPAGE
+        </h1>
+        <div id="container"></div>
     </body>
+    <script>
+        
+        const container = document.querySelector('#container');
+        const body = document.querySelector('body');
+
+        const one = document.createElement('p');
+        one.classList.add('one');
+        one.textContent = 'Hey I\'m Red!';
+        one.style.color = 'red';
+
+        container.appendChild(one);
+
+        const two = document.createElement('h3');
+        two.classList.add('two');
+        two.textContent = 'Hey I\'m Blue!';
+        two.style.color = 'blue';
+
+        container.appendChild(two);
+
+        const three = document.createElement('div');
+        three.setAttribute('id', 'newContainer');
+        three.setAttribute('style', 'border:solid black; background: pink');
+
+        body.appendChild(three);
+
+        const four = document.createElement('h1');
+        four.classList.add('four');
+        four.textContent = 'I\'m in a Div!';
+
+        three.appendChild(four);
+
+        const five = document.createElement('p');
+        five.setAttribute('id', 'five');
+        five.textContent = 'ME TOO!';
+
+        three.appendChild(five);
+
+
+    </script>
 </html>

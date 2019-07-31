@@ -154,7 +154,78 @@
                 more details on html attributes.</p>
 
             <h2>Working With Classes</h2>
+            <p class='code-block'>
+                div.classList.add('new');<br>
+                // adds class "new" to the div<br>
+                <br>
+                div.classList.remote('new');<br>
+                // removes "new" class from the div<br>
+                <br>
+                div.classList.toggle('active');<br>
+                // if div doesnt have class "active" then add it; if it does, then remove it.
+            </p>
 
+            <h2>Adding Text Content</h2>
+            <p class='code-block'>
+                div.textContent = 'Hello World!';<br>
+                // creates a text node containing the string and inserts it into div.
+            </p>
+
+            <h2>Adding HTML Content</h2>
+            <p class='code-block'>
+                div.innerHTML = '&ltspan&gtHello World!&ltspan&gt';<br>
+                // renders the html inside the div
+            </p>
+        </div>
+
+        <div class='chapter'>
+            <h1>Working Example</h1>
+            <p class='code-block'>
+                // HTML File<br>
+                &ltbody&gt<br>
+                <ind>___</ind>&lth1&gt<br>
+                <ind>______</ind>THE TITLE OF THE WEBPAGE<br>
+                <ind>___</ind>&lt/h1&gt<br>
+                <ind>___</ind>&ltdiv id="container"&gt&lt/div&gt<br>
+                &lt/body&gt
+            </p>
+            <p class='code-block'>
+                // JavaScript File<br>
+                const container = document.querySelector('#container');<br>
+                <br>
+                const content = document.createElement('div');<br>
+                content.classList.add('content');<br>
+                content.textContent = 'This is the text content!';<br>
+                <br>
+                content.appendChild(content); 
+            </p>
+            <p>In the JavaScript file, first we reference the existing container div in the HTML. We 
+                then create a new div and store it against the variable called 'content'. A class is 
+                then added to the content div, and some text is assigned to it. The content div is then 
+                appended to the container. Afterward the JS is run, the DOM tree will look like:
+            </p>
+            <p class='code-block'>
+                // HTML File<br>
+                &ltbody&gt<br>
+                <ind>___</ind>&lth1&gt<br>
+                <ind>______</ind>THE TITLE OF THE WEBPAGE<br>
+                <ind>___</ind>&lt/h1&gt<br>
+                <ind>___</ind>&ltdiv id="container"&gt<br>
+                <ind>______</ind>&ltdiv class="content"><br>
+                <ind>_________</ind>This is the text content!<br>
+                <ind>______</ind>&lt/div&gt<br>
+                <ind>___</ind>&lt/div&gt<br>
+                &lt/body&gt
+            </p>
+            <p>Remember, the JavaScript does not alter the HTML. It alters the DOM. So it is just what
+                the browser renders which is changed. 
+            </p>
+            <p>Also, remember that JavaScript typically runs when the JS file is run, so including
+                the JS file at the top of the HTML file means that a lot of DOM manipulation methods
+                may not run as the JS runs before the nodes are created in the DOM. Therefore, it's 
+                often best to add the JS at the bottom of the HTML file so that the DOM nodes are 
+                parsed and created. 
+            </p>
         </div>
 
 

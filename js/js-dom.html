@@ -305,8 +305,98 @@
             <p>Using named functions can help code considerably cleaner and very useful if the function 
                 can be called upon in multiple places.
             </p>
-        </div>
-
+            <p>With all three methods, more information regarding the event can be accessed by passing
+                a parameter to the function that we are calling.
+            </p>
+            <p class='code-block'>
+                btn.addEventListener('click', function(e){<br>
+                    console.log(e);<br>
+                })
+            </p>
+            <p>The e in the function above is an object that references the event itself. Open the 
+                console and click the button below to see the deta which is captured.
+            </p>
+                <!--In Action-->
+            <button id="btntest3">Click Me</button>
+            <script>
+                var btntest3 = document.querySelector('#btntest3');
+                btntest3.addEventListener('click', function(e){
+                    console.log(e);
+                })
+            </script>
+                <!--END-->
+            <p>Those properties or information about the events target can be targeted and changed. 
+                For example, click this button to see what happens to it:
+            </p>
+                <!--In Action-->
+            <button id='btntest4'>Click Me</button>
+            <script>
+                var btntest4 = document.querySelector('#btntest4');
+                btntest4.addEventListener('click', function(e){
+                    e.target.style.background = 'blue';
+                })
+            </script>
+                <!--END-->
+            <h2>Attaching Listeners to Groups of Nodes</h2>
+            <p>There are a few ways to add similar event listeners to may elements. Firstly, 
+                as covered earlier, we can get a nodelist of all items matching a specific selector 
+                using 'querySelectorAll('selector'). 
+            </p>
+            <p>This allows event listeners to be added to multiple nodes, which just need to 
+                be iterated through using the forEach method below.
+            </p>
+            <p class='code-block'>
+                // HTML file<br>
+                &ltdiv id="containtertest1"&gt<br>
+                <ind>___</ind>&ltbutton id='1'&gtClick Me&lt/button&gt<br>
+                <ind>___</ind>&ltbutton id='2'&gtClick Me&lt/button&gt<br>
+                <ind>___</ind>&ltbutton id='3'&gtClick Me&lt/button&gt<br>
+                &lt/div&gt
+            </p>
+            <p class='code-block'>
+                // JavaScript file<br>
+                // buttons is a node list, which looks/acts like an array:<br>
+                const buttons = document.querySelectorAll('button');<br>
+                <br>
+                // Use the forEach mthod to iterate through each button:<br>
+                buttons.forEach((button) => {<br>
+                    button.addEventListener('click', (e) => {<br>
+                        alert(button.id)<br>
+                    })<br>
+                })
+            </p>
+            <p>For example, the following three buttons all have a listen attached based on a shared
+                class. Each returns the id of the button when selected.
+            </p>
+                <!--In Action-->
+            <div id="btncontainertest">
+                <button class='btntest4' id='1'>Click Me</button>
+                <button class='btntest4' id='2'>Click Me</button>
+                <button class='btntest4' id='3'>Click Me</button>
+            </div>
+            <script>
+                const buttonstest = document.querySelectorAll('.btntest4');
+                buttonstest.forEach((button) => {
+                    button.addEventListener('click', (e) => {
+                        alert(button.id);
+                    });
+                });
+            </script>
+                <!--END-->
+            <p>There are many more things to do with DOM manipulation and event handling. 'Click' is
+                a key event, and others include:
+            </p>
+            <ul>
+                <li>click</li>
+                <li>dblclick</li>
+                <li>keypress</li>
+                <li>keydown</li>
+                <li>keyup</li>
+            </ul>
+            <p>A list more more details is available
+                <a href='https://www.w3schools.com/jsref/dom_obj_event.asp'>here</a>.
+            </p>
+        </div> 
 
     </div>
 

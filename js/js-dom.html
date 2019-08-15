@@ -230,7 +230,81 @@
 
         <div class='chapter'>
             <h1>Events</h1>
-            <p></p>
+            <p>Events are the reaction to certain actions on a webpage, such as a mouse-click or a key-
+                press. JaveScript can be used to listen and react to these events. There are three key 
+                ways to do this:
+            </p>
+            <ol>
+                <li>You can attach functions attributes directly on HTML elements.</li>
+                <li>You can set the "on_event_" property on the DOM object in JavaScript.</li>
+                <li>You can attach event listeners to the nodes in the JavaScript.</li>
+            </ol>
+            <p>Typically, event listeners are the preferred method, but all three can be used.</p>
+            <p><b>Method 1</b></p>
+            <p class='code-block'>
+                &ltbutton onclick="alert('Hello World')"&gtClick Me&lt/button&gt
+            </p>
+                <!--In Action-->
+            <button onclick="alert('Hello World')">Click Me</button>
+                <!--END-->
+            <p>This isn't very ideal as the HTML becomes cluttered and difficult to manage.</p>
+            <p><b>Method 2</b></p>
+            <p class='code-block'>
+                // HTML file<br>
+                &ltbutton id="btn"&gtClick Me&lt/button&gt
+            </p>
+            <p class='code-block'>
+                // JavaScript file<br>
+                var btn = document.querySelector('#btn');<br>
+                btn.onclick = () => alert("Hello World");
+            </p>
+                <!--In Action-->
+            <button id="btntest">Click Me</button>
+            <script>
+                var btntest = document.querySelector('#btntest');
+                btntest.onclick = () => alert("Hello World");
+            </script>
+                <!--END-->
+            <p><b>Method 3</b></p>
+            <p class='code-block'>
+                // HTML file<br>
+                &ltbutton id="btntest2"&gtClick Me&lt/button&gt
+            </p>
+            <p class='code-block'>
+                // JavaScript file<br>
+                var btntest2 = document.querySelector('#btntest2');<br>
+                btntest2.addEventListener('click', () => {<br>
+                    alert("Hello World");<br>
+                })
+            </p>
+                <!--In Action-->
+            <button id="btntest2">Click Me</button>
+            <script>
+                var btntest2 = document.querySelector('#btntest2');
+                btntest2.addEventListener('click', () => {
+                    alert("Hello World!");
+                })
+            </script>
+            <p>This is the preferred method due to its flexibility, although it can be more complex
+                to set up. 
+            </p>
+            <p>Note that all three methods can be used to call on named functions. For example:</p>
+            <p class='code-block'>
+                function alertFunction() {<br>
+                    alart("Hello World!")<br>
+                }<br>
+                // Method 1<br>
+                &ltbutton onclick="alertFunction()"&gtCLICK ME&lt/button&gt<br>
+                <br>
+                // Method 2<br>
+                btn.onclick = alertFunction;<br>
+                <br>
+                // Method 3<br>
+                btn.addEventListener('click', alertFunction);
+            </p>
+            <p>Using named functions can help code considerably cleaner and very useful if the function 
+                can be called upon in multiple places.
+            </p>
         </div>
 
 

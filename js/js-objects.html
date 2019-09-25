@@ -44,6 +44,29 @@
             alert(user.age); // returns number: 30<br>
             alert(user.isAdmin); // returns boolean: true
         </p>
+        <p>And the property values are set in the same way: </p>
+        <p class='code-block'>
+            set user.name = "Dan";
+        </p>
+        <p>Removing a property from an object also uses dot notation, and is done so like this:</p>
+        <p class='code-block'>
+            delete user.name; // removes name property
+        </p>
+        <p>Typically, property names are camelCase, but they can be separate words. Just use quotation, like this:</p>
+        <p class='code-block'>
+            let user = {<br>
+                name: "Dan",<br>
+                age: 30,<br>
+                "Admin User": true<br>
+            }
+        </p>
+        <p>...but bear in mind, using multiword property Keys requires square brakets [] to be used when calling on that propery, 
+            remembering the quotes still, like this:</p>
+        <p class='code-block'>
+            alert(user.["Admin User"]); // returns boolean: true
+        </p>
+
+        // CARRY ON FROM ABOUT 20% DOWN: Here, the variable key may be calculated at run-time or depend on the user input. And then we use it to access the property. That gives us a great deal of flexibility.
     
     </div>
 

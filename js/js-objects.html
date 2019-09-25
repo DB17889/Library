@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<head>
+    <link href="./js-style.css" rel="stylesheet">
+</head>
+<body>
+
+    <div class="page-header">
+        <a class="page-link" href="../index.html">Library Index</a>
+        <a class="page-link" href="./js-index.html">JS Index</a>
+    </div>
+    
+    <div class='page-container'>
+
+        <div class="page-title">
+            <p>Objects</p>
+        </div>
+ 
+        <div class="chapter">
+            <h1>Introduction to Objects</h1>
+        </div>
+        <p>As covered previously, JavaScript has 7 different data types. Whilst the other 6 are 'primitive', as they only hold one value,
+            objects are more complex as they store collections of various elements. 
+        </p>
+        <p>An object is created with curly brackets: {}</p>
+        <p>These brackets contain an option list of <i>properties</i>. Each property has a "Key: Value" relationship, where the key is a string
+            which names the propery, and the value is any value.</p>
+        <p>There are two syntaxes to use when creating an object; the second is more practical, and is refered to a <i>object literal</i>:</p>
+        <p class='code-block'>
+            let user = new Object(); // Syntax is <i>Object Constructor</i><br>
+            let user = {}; // Syntax is <i>Object Literal</i>
+        </p>
+        <p>Using "Key: Value" paired components, properties can be added straight into the object literal like this:</p>
+        <p class='code-block'>
+            let user = {<br>
+                name: "Dan",<br>
+                age: 30,<br>
+                isAdmin: true<br>
+            }
+        </p>
+        <p>...where the Key is followed by a colon (:) and the Value is followed by a comma (,) if another property is to be added.</p>
+        <p>Propery values can be called on using the dot notation, like so:</p>
+        <p class='code-block'>
+            alert(user.name); // returns string: Dan<br>
+            alert(user.age); // returns number: 30<br>
+            alert(user.isAdmin); // returns boolean: true
+        </p>
+    
+    </div>
+
+</body>

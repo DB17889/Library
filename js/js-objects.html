@@ -66,7 +66,68 @@
             alert(user.["Admin User"]); // returns boolean: true
         </p>
 
-        // CARRY ON FROM ABOUT 20% DOWN: Here, the variable key may be calculated at run-time or depend on the user input. And then we use it to access the property. That gives us a great deal of flexibility.
+        <h2>Computed Properties</h2>,
+        <p>Computed properties are those which are defined within square brackets like this:</p>
+        <p class='code-block'>
+            let fruit = prompt("Which fruit do you want?" "apple");<br>
+            <br>
+            let bag = {<br>
+                [fruit]: 5<br>
+            };<br>
+            <br>
+            alert(bag.apple); // returns 5 if fruit="Apple"
+        </p>
+        <p>So what is happening here:</p>
+        <ol>
+            <li>We have variable `fruit` which is assigned whatever value the user inputs when prompted. In this case, the user 
+                is prompted to enter apple, so just needs to confirm when prompted. 
+            </li>
+            <li>Then we have object bag which has a computed property `[fruit]`. As the property name is in square brackets, and does NOT contain
+                quotations (like a multiword propery name covered previously would), the propery name simply inherits whatever value is assigned
+                to the `fruit` variation. So in this case, the propery name is 'apple'.
+            </li>
+            <li>Therefore, the alert object.property, in this case bag.apple (where apple is inherited from `[fruit]`) returns 5.</li>
+        </ol>
+        <p>Be aware, this does the same, but the first method is better as it is 'cleaner' to view:</p>
+        <p class='code-block'>
+            let fruit = prompt("Which fruit do you want?" "apple");<br>
+            let bag = {};<br>
+            <br>
+            bag[fruit] = 5;
+        </p>
+        <p>Typically, dot notication is easier to code. But bear in mind that square brackets are more powerful as they allow any propery names
+            and variables.
+        </p>
+
+        <h2>Property Value Shorthand</h2>
+        <p>In real code, we often use existing variables as values for property names. For example:</p>
+        <p class='code-block'>
+            function makeUser(name, age){<br>
+                return {<br>
+                    name: name,<br>
+                    age: age, <br>
+                    //etc...<br>
+                };<br>
+            }<br>
+            <br>
+            let user = makeUser("Dan", 30);<br>
+            alert(user.name); //returns Dan
+        </p>
+        <p>Above the property name and value name are the same, and this is very common with object properties, so shorthand is available
+            meaning that just 'name' can be used instead of 'name: name' like this:
+        </p>
+        <p class='code-block'>
+            function makeUser(name, age){<br>
+                return {<br>
+                    name,<br>
+                    age, <br>
+                    //etc...<br>
+                };<br>
+        </p>
+
+        <h2>Existance Check</h2>
+        <p></p>
+
     
     </div>
 

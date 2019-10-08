@@ -126,7 +126,76 @@
         </p>
 
         <h2>Existance Check</h2>
-        <p></p>
+        <p>When accessing an object property, if the object propery doesn't exist, then when trying to access it the non-existing propery 
+            returns 'undefined'. For example:
+        </p>
+        <p class='code-block'>
+            let user = {};<br>
+            <br>
+            alert(user.notAProperty === undefined); // returns true
+        </p>
+        <p>...the above returns true as the propery 'notAProperty' does not exist so has strict equality with 'undefined'.</p>
+        <p>As an alternative, the operator "in" can be used to check the existance of a property using the syntax: "key" in objectName</p>
+        <p>For example:</p>
+        <p class='code-block'>
+            let user = { name: "Dan", age: "30", };<br>
+            <br>
+            alert ("age" in user); // returns true, as user.age exists.<br>
+            alert ("gender" in user); // returns false, as user.gender does not exist.
+        </p>
+        <p>Note that the "key" property name on the left of the 'in' operator should be in quotation marks to indicate it as a propery name. 
+            Otherwise, without quotation markes the 'in' operator would test against the value of a variable of that name, not propery. For example:
+        </p>
+        <p class='code-block'>
+            let user = { age: 30 }; <br>
+            <br>
+            let key = 'age';<br>
+            alert (key in user); // returns true, as key = 'age', and user.age exists.
+        </p>
+
+        <h2>The "for...in" Loop</h2>
+        <p>
+            The 'for...in' loop is a special form of loop which runs through all keys of an object. The syntax is: 
+        </p>
+        <p class='code-block'>
+            for (key in object) {<br>
+                // executes the body for each key among object properties<br>
+            }
+        </p>
+        <p>For example:</p>
+        <p class='code-block'>
+            let user = {<br>
+                name: 'Dan',<br>
+                age: 30,<br>
+                isAdmin: true,<br>
+            }<br>
+            <br>
+            for (let key in user) {<br>
+                alert(key); // returns the keys, so: name, age, isAdmin<br>
+                alert(user[key]); // returns the values of the keys, so: Dan, 30, true<br>
+            }
+        </p>
+        <p>Note that using for, we can declare the looping variable inside the loop like 'let key' above. Also note that the variable name 
+            can be anything, so does not have to be 'key'.
+        </p>
+
+        <h2>Ordering Objects</h2>
+        <p>If we loop over an object, do we get properties in the same order that they are added? The answer is 'sort of'. Numbers are sorted 
+            in numberical order; all other types appear in creation order. For example:
+        </p>
+        <p class='code-block'>
+            let codes = {<br>
+                "49": "Germany", <br>
+                "41": "Switzerland", <br>
+                "44": "UK", <br>
+                "1": "USA" <br>
+            }<br>
+            <br>
+            for (let code in codes) {<br>
+                alert(code); // returns 1, 41, 44, 49<br>
+            }
+        </p>
+
 
     
     </div>

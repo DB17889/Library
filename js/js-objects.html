@@ -195,7 +195,76 @@
                 alert(code); // returns 1, 41, 44, 49<br>
             }
         </p>
+        <p>Non-integers are sorted in the created order, for example: </p>
+        <p class='code-block'>
+            let user = {<br>
+                name: "Dan",<br>
+                surname: "B",<br>
+            };<br>
+            <br>
+            user.age = 30 // to add one more<br>
+            <br>
+            for (let prop in user) {<br>
+                alert(prop); // returns: name, surname, age<br>
+                alert[(user[prop]); // returns Dan, B, 30<br>
+            }
+        </p>
+        <p>A simple solution to the problem of integers listing in numeric order when not required, is to prefix the integer with: +</p>
+        <p>The + gets omitted, like this:</p>
+        <p class='code-block'>
+            let codes = {<br>
+                "+49": "Germany", <br>
+                "+41": "Switzerland", <br>
+                "+44": "UK", <br>
+                "+1": "USA" <br>
+            }<br>
+            <br>
+            for (let code in codes) {<br>
+                alert(+code); // returns 49, 41, 44, 1<br>
+            }
+        </p>
 
+        <h2>Copying By Reference</h2>
+        <p>One of the fundamental differences of objects vs primates is that objects are stored and copied by reference.</p>
+        <p>Primitive values, so string, numbers and booleans, are copied as a whole value. For example:</p>
+        <p class='code-block'>
+            let message = "Hello";<br>
+            let phrase = message;
+        </p>
+        <p>...we now have two variables, both storing string "Hello".</p>
+        <p>But objects don't behave like that. Instead of string the object itself in a variable, it stores a reference to it, or it's 
+            'address in memory' as it's known. 
+        </p>
+        <p>Take the object below:</p>
+        <p class='code-block'>
+            let user = {<br>
+                name: "Dan"<br>
+            }<br>
+        </p>
+        <p>...here, the object itself is stored in the memory. The variable 'user' then is a reference to that object.</p>
+        <p>When the object is copied, the reference is copied rather than the object itself. For example:</p>
+        <p class='code-block'>
+            let user = {<br>
+                name: "Dan"<br>
+            }<br>
+            <br>
+            let admin = user; // copies the reference 
+        </p>
+        <p>...we now have two variables, each referencing the same object. Either can be used to access and modify the contents of the object. For example:</p>
+        <p class='code-block'>
+            let user = {<br>
+                name: "Dan"<br>
+            }<br>
+            <br>
+            let admin = user;<br>
+            <br>
+            admin.name = 'Laura' // name changed via the admin reference<br>
+            <br>
+            alert(user.name)// returns 'Laura' changes seen from user reference.
+        </p>
+
+        <h2>Comparison By Reference</h2>
+        <p>The equality == and strict equality === operators for objects work in the same way.</p>
 
     
     </div>
